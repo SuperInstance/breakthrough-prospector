@@ -43,3 +43,9 @@ cards stand on, so it jumps the queue per rule 3.)
 - Lab pulse 07:56: exp015 ELITISM-ARTIFACT (partial) VERIFIED — fed registry C11 as
   an in-fleet VERIFIED instance; SRIP diagnostic (selection-regime-invariance probe)
   proposed as the reusable tile it implies.
+- 2026-09-29 ~08:20: **E1 COMPLETE** — catch 43/60 = 0.72 (nine shapes 1.00,
+  literal_rewrite 0.60, three shapes 0.00), canaries 9/12, PR MicroMoth-quilt#20.
+  Honest negatives: baseline manifest-drift RED on pristine main (delta-based catch
+  semantics); qcells/ doesn't exist (battery = tests/, 144 cases); the three 0.00
+  shapes are named coverage holes (rz-phase pin, noise_model-vs-sampled-counts,
+  r<=cumu measure-zero). These holes are the next delta candidates.
