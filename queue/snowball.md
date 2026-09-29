@@ -70,3 +70,18 @@ cards stand on, so it jumps the queue per rule 3.)
   distill loop. Queue gains E8 (meta-lane two-timescale, C01+C13, B48 RUN) and
   E9 (prediction-paired receipts, forge v0.2.0, C13, B40 RUN). Synergy matrix
   maps each external pattern to a live fleet lane.
+- 2026-09-29 ~17:40Z: **E6 slice-1 executed → HONEST-PARTIAL
+  (qrng-channel-degraded)**, experiments/e6-slice-1/ — the GEPA-class answer-wire
+  abstraction over a REAL target (lode engine KEYS lens): registration sealed
+  + pushed pre-run (e756f09 → f3ad79e → bdc8c04), replay instrumentation proven
+  faithful (run-6 byte-exact; run-5 minus the two receipted post-fixer cards),
+  baseline pinned M=7.0740740740740735/totalF=15, reflective priors receipted
+  (ONE typesafe call, jev-1.13.0, 2808 in/235 out), but the certified
+  anti-cherry-pick draw never landed: comet-qrng-v1 job #1 delivered 40 bits
+  (<112 for pool 8, fail-closed), job #2 prf completed with an incomplete
+  certification payload (fail-closed) — 2 jobs consumed, 0 seals, ≤2-job cap
+  CONSUMED → fail-closed per the registered abort line: no bundle, 8 arms stay
+  frozen-unmeasured, cost rule NOT_PAID, no PASS/FAIL claim. E6 stays OPEN at
+  queue #2; next probe (receipted in verdict.md): fresh registration on a
+  recovered channel — same frozen arms (23eec18d…), same pinned baseline, same
+  metric/margins; priors battery of record stays sealed.

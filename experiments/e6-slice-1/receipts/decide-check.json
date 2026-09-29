@@ -1,0 +1,102 @@
+{
+ "kind": "e6-slice-1-decide",
+ "ts_utc": "2026-09-29T17:39:24.086Z",
+ "check": true,
+ "verdict": "HONEST-PARTIAL",
+ "partial_reason": "qrng-channel-degraded — the certified anti-cherry-pick lead was never drawn (mothquantum comet-qrng-v1: job #1 direct fail-closed on min-entropy bit budget 40<112 bits; job #2 prf fail-closed on incomplete certification payload; both jobs consumed, zero certified seals issued; the <=2-job cap set in the pushed pre-draw repair is CONSUMED). Per the registered abort_line the decision procedure is fail-closed: no bundle, no arms measured, no promotion, NO PASS/FAIL claim on the mutation space. The 8 arms stay frozen-unmeasured for a fresh registration on a recovered channel.",
+ "validity": {
+  "ok": true,
+  "run6": {
+   "history_state_matches_committed": true,
+   "exclusions_match_committed": true,
+   "survivors_byte_equal_committed": true,
+   "derived": {
+    "markers_n": 11,
+    "previously_drawn": [
+     "2026-09-29-engine-run-1:c7",
+     "2026-09-29-engine-run-2:c1",
+     "2026-09-29-engine-run-4:c4",
+     "2026-09-29-engine-run-5:c3"
+    ]
+   }
+  },
+  "run5": {
+   "history_prevdrawn_matches_committed": true,
+   "exclusion_delta_is_exactly_receipted_fix": true,
+   "survivors_equal_committed_minus_receipted_delta": true,
+   "extra_exclusions": [
+    {
+     "id": "c17",
+     "title": "Audit the Scaffold, Not the Checkpoint: A Stationarity Dichotomy for Recursive Self-Improvement in Agentic Coding",
+     "source": "arxiv",
+     "ref": "http://arxiv.org/abs/2609.34924v1",
+     "matched": "M11"
+    },
+    {
+     "id": "c2",
+     "title": "Recursive self-improvement of AI research agents",
+     "source": "hn-algolia",
+     "ref": "https://arxiv.org/abs/2609.26457",
+     "matched": "M3"
+    }
+   ]
+  },
+  "notes": []
+ },
+ "baseline_pin_ok": true,
+ "baseline": {
+  "M": 7.0740740740740735,
+  "totalF": 15,
+  "per_corpus": [
+   {
+    "corpus": "run5-scout",
+    "mu": 2,
+    "f": 3
+   },
+   {
+    "corpus": "run6-scout",
+    "mu": 2,
+    "f": 3
+   },
+   {
+    "corpus": "awesome-rsi-catalog",
+    "mu": 2.2222222222222223,
+    "f": 9
+   }
+  ]
+ },
+ "priors": {
+  "ok": true,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2808,
+   "output_tokens": 235
+  },
+  "answers_note": "receipted in priors.json; NOT used to select anything (the lead was never drawn)"
+ },
+ "seal": {
+  "ok": false,
+  "attempts_ledger": "receipts/qrng-attempts.jsonl",
+  "stream": "prf",
+  "error": "Command failed: node /home/z/my-project/fleet-seeds/tools/moth-seal.mjs --n=1 --pool=8 --label=e6-slice-1-arm-draw --stream=prf --out=/home/z/my-project/breakthrough-prospector/experiments/e6-slice-1/receipts/qrng-seal.json --quiet\nmoth-seal: moth-seal: FAIL-CLOSED — certification payload incomplete/invalid: entropy_report.budget_bits>0; random.hex(even-length hex, non-empty)\n"
+ },
+ "arms_frozen_unmeasured": [
+  "A1",
+  "A2",
+  "A3",
+  "A4",
+  "A5",
+  "A6",
+  "A7",
+  "A8"
+ ],
+ "cost_rule": {
+  "law": "M10 (arXiv:2609.24972): added inference cost must be paid for by measured gain",
+  "spend": [
+   "1 typesafe systemone battery call (receipted 2808 in / 235 out)",
+   "2 mothquantum comet jobs consumed, 0 certified seals issued (ledgered)"
+  ],
+  "paid": "NOT_PAID",
+  "settlement_note": "the added spend bought: a proven-faithful replay instrumentation (validity gates), a receipted reflective-priors battery, and a receipted channel-degradation finding — not measured gain"
+ }
+}

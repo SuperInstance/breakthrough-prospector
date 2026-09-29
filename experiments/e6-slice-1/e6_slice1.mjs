@@ -426,14 +426,34 @@ if (stage === 'decide') {
 
   const priors = JSON.parse(readFileSync(join(OUT, 'priors.json'), 'utf8'));
   const witness = JSON.parse(readFileSync(join(OUT, 'witness.json'), 'utf8'));
+  // Registered abort_line: "external channel failure (typesafe/mothquantum
+  // non-2xx or timeout) -> fail-closed honest partial receipted". This branch
+  // WRITES that receipt (repair #3, post-draw: the draw already happened and
+  // failed fail-closed; decision values untouched — additions only here).
+  if (!priors.ok || !witness.ok) {
+    const receipt = {
+      kind: 'e6-slice-1-decide', ts_utc: ts(), check,
+      verdict: 'HONEST-PARTIAL',
+      partial_reason: !witness.ok
+        ? 'qrng-channel-degraded — the certified anti-cherry-pick lead was never drawn (mothquantum comet-qrng-v1: job #1 direct fail-closed on min-entropy bit budget 40<112 bits; job #2 prf fail-closed on incomplete certification payload; both jobs consumed, zero certified seals issued; the <=2-job cap set in the pushed pre-draw repair is CONSUMED). Per the registered abort_line the decision procedure is fail-closed: no bundle, no arms measured, no promotion, NO PASS/FAIL claim on the mutation space. The 8 arms stay frozen-unmeasured for a fresh registration on a recovered channel.'
+        : 'priors channel failed — no reflective priors of record; decision procedure fail-closed per registered abort_line',
+      validity, baseline_pin_ok: basePinOk,
+      baseline: { M: base.M, totalF: base.totalF, per_corpus: base.per_corpus.map(({ corpus, mu, f }) => ({ corpus, mu, f })) },
+      priors: priors.ok ? { ok: true, model: priors.model, usage: priors.usage, answers_note: 'receipted in priors.json; NOT used to select anything (the lead was never drawn)' } : { ok: false, error: priors.error },
+      seal: { ok: witness.ok, attempts_ledger: 'receipts/qrng-attempts.jsonl', stream: witness.stream ?? null, error: witness.error ?? null },
+      arms_frozen_unmeasured: arms.arms.map((a) => a.id),
+      cost_rule: { law: 'M10 (arXiv:2609.24972): added inference cost must be paid for by measured gain', spend: ['1 typesafe systemone battery call (receipted 2808 in / 235 out)', '2 mothquantum comet jobs consumed, 0 certified seals issued (ledgered)'], paid: 'NOT_PAID', settlement_note: 'the added spend bought: a proven-faithful replay instrumentation (validity gates), a receipted reflective-priors battery, and a receipted channel-degradation finding — not measured gain' },
+    };
+    writeFileSync(join(OUT, check ? 'decide-check.json' : 'decide.json'), JSON.stringify(receipt, null, 1) + '\n');
+    log('decide: HONEST-PARTIAL (' + receipt.partial_reason.slice(0, 90) + '…) — nothing measured, nothing promoted, fail-closed per registration');
+    process.exit(1);
+  }
   if (!validity.ok || !basePinOk) {
     const receipt = { kind: 'e6-slice-1-decide', ts_utc: ts(), check, verdict: 'INVALID-INSTRUMENTATION', validity, baseline_pin_ok: basePinOk, baseline_M: base.M };
     writeFileSync(join(OUT, check ? 'decide-check.json' : 'decide.json'), JSON.stringify(receipt, null, 1) + '\n');
     log('decide: INVALID-INSTRUMENTATION (fail-closed, nothing measured, nothing promoted)');
     process.exit(1);
   }
-  if (!priors.ok) throw new Error('priors.json not ok — decide is fail-closed (run priors stage first)');
-  if (!witness.ok) throw new Error('witness.json not ok — decide is fail-closed (run draw stage first)');
 
   // M4/M10 budget cap: bundle = QRNG lead + (B-1) top-noul fills. B = max(1,
   // ceil(B0*ANNEAL^t)), B0=3, ANNEAL=0.7, t=0 prior E6 slices → B=3.
@@ -478,7 +498,7 @@ if (stage === 'decide') {
 if (stage === 'determinism') {
   const a = JSON.parse(readFileSync(join(OUT, 'decide.json'), 'utf8'));
   const b = JSON.parse(readFileSync(join(OUT, 'decide-check.json'), 'utf8'));
-  const strip = (r) => { const { ts_utc, ...rest } = r; return rest; };
+  const strip = (r) => { const { ts_utc, check, ...rest } = r; return rest; };
   const sa = sha256(JSON.stringify(strip(a)));
   const sb = sha256(JSON.stringify(strip(b)));
   const rec = { kind: 'e6-slice-1-determinism', ts_utc: ts(), decide_sha256: sa, decide_check_sha256: sb, byte_identical_modulo_ts: sa === sb };
