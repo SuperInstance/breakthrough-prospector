@@ -1,0 +1,1 @@
+{"kind":"usage-receipt","at_utc":"2026-09-29T17:27:14.809Z","service":"typesafe.ai/v1/systemone","model":"jev-1.13.0","usage":{"input_tokens":2808,"output_tokens":235},"latency_ms":332.072,"purpose":"e6-slice-1 reflective priors (8 noul + 1 choice, ONE call)","questions":9}

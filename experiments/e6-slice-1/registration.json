@@ -125,7 +125,7 @@
   "witness_run5": "b705d32e300fd475be55f0bff39852a2078ea01292ea17f467f0614b8b56d663",
   "witness_run6": "a8c1b49476c76e973680f33881af5344a477681940b6430e3582db7c42978ba9"
  },
- "runner_sha256": "63556a114744a3b423e3e58cbf8e17fd1e7db50b7829b0196215064f7424089e",
+ "runner_sha256": "d32f4f4e456cd385f0be5e439d2138ab8e223e57290a7f8448c532559807c6c5",
  "runner": "e6_slice1.mjs (stages: baseline | priors | draw | decide [--check] | determinism; deterministic local execution; reuses fleet-seeds/lode/engine/systemone_client.mjs and fleet-seeds/tools/moth-seal.mjs verbatim — no reinvented channels)",
  "arms_sha256": "23eec18d31cd6b8f258fb060732c6e88d7fdbac890879632787e03318ee748b4",
  "baseline_M": 7.0740740740740735,
@@ -134,5 +134,7 @@
  "pass_margin_relative": 0.05,
  "prior_e6_slices": 0,
  "pre_run_schema_repair_note": "field-placement repair receipted 2026-09-29T17:2xZ BEFORE any arm measurement and BEFORE any external call (the priors stage fail-closed on the misplaced keys; zero spend, zero measurement): runner-facing pins moved to top level. All VALUES unchanged — arms_sha256 23eec18d…, baseline 7.0740740740740735/15, margin 0.05, caps, hashes identical to the sealed commit e756f09.",
- "pre_run_schema_repair_utc": "2026-09-29T17:27:00.925Z"
+ "pre_run_schema_repair_utc": "2026-09-29T17:27:00.925Z",
+ "pre_draw_repair_note": "repair receipted BEFORE the QRNG draw and BEFORE any arm measurement (jobs consumed so far: 1 direct attempt fail-closed on the min-entropy bit budget — pool 8 needs >=112 bits, job delivered 40; no receipt issued, attempt ledgered in receipts/qrng-attempts.jsonl): (a) runner gains an explicit seal-stream passthrough (E6_SEAL_STREAM, default direct) and an append-only qrng-attempts.jsonl attempt ledger — the draw now proceeds on moth-seal's own registered --stream=prf extension (its declared answer to exactly this fail-closed condition; effectiveEntropyBits receipted by the certified seal itself, never silent), job #2 of the <=2-seal cap; (b) runner_sha256 updated accordingly. All decision values byte-identical: arms 23eec18d, baseline 7.0740740740740735/15, margin 0.05, B=3.",
+ "pre_draw_repair_utc": "2026-09-29T17:29:28.205Z"
 }

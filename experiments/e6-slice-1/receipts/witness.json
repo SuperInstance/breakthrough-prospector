@@ -1,0 +1,6 @@
+{
+ "kind": "e6-slice-1-qrng-witness",
+ "ts_utc": "2026-09-29T17:27:35.086Z",
+ "ok": false,
+ "error": "Command failed: node /home/z/my-project/fleet-seeds/tools/moth-seal.mjs --n=1 --pool=8 --label=e6-slice-1-arm-draw --out=/home/z/my-project/breakthrough-prospector/experiments/e6-slice-1/receipts/qrng-seal.json --quiet\nmoth-seal: moth-seal: FAIL-CLOSED — pool 8 needs >= 112 bits, job delivered 40 (min-entropy-limited yield). Use --stream=prf (receipted extension) or a smaller pool.\n"
+}

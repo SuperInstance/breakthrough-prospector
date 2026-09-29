@@ -374,11 +374,18 @@ if (stage === 'draw') {
   assertPins(reg);
   const arms = JSON.parse(readFileSync(join(HERE, 'arms.json'), 'utf8'));
   const at = ts();
+  // E6_SEAL_STREAM: 'direct' (default) | 'prf' — moth-seal's own registered
+  // receipted extension mode. First direct attempt fail-closed on the
+  // min-entropy bit budget (job delivered 40 bits < 112 required for pool 8);
+  // proceeding on prf is the tool's declared answer and is receipted by the
+  // seal itself (effectiveEntropyBits declared, never silent).
+  const stream = process.env.E6_SEAL_STREAM === 'prf' ? 'prf' : 'direct';
   try {
     const sealPath = join(OUT, 'qrng-seal.json');
     execFileSync('node', [
       join(FLEET, 'tools', 'moth-seal.mjs'),
       '--n=1', `--pool=${arms.arms.length}`, '--label=e6-slice-1-arm-draw',
+      ...(stream === 'prf' ? ['--stream=prf'] : []),
       `--out=${sealPath}`, '--quiet',
     ], { stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, MOTH_KEY: process.env.MOTHQUANTUM_TOKEN || process.env.MOTH_KEY }, timeout: 180000 });
     const seal = JSON.parse(readFileSync(sealPath, 'utf8'));
@@ -386,14 +393,18 @@ if (stage === 'draw') {
     const w = {
       kind: 'e6-slice-1-qrng-witness', ts_utc: at, ok: true, arms_sha256: reg.arms_sha256,
       drawn_index: sel, drawn_arm: arms.arms[sel]?.id ?? null,
+      stream, stream_note: stream === 'prf' ? 'certified bytes seed the registered SHA-256 counter stream (mothbits STEP 3 semantics); extension declared explicitly, effectiveEntropyBits in the certified receipt' : 'direct certified stream',
+      certifiedBits: seal.certifiedBits ? { deliveredBytes: seal.certifiedBits.deliveredBytes, hBit: seal.certifiedBits.hBit, effectiveEntropyBits: seal.certifiedBits.effectiveEntropyBits, streamKind: seal.certifiedBits.stream } : null,
       raw_result_sha256: seal.rawResultSha256 ?? null, job: seal.job ?? null,
-      note: 'certified comet-qrng-v1 Fisher-Yates over the frozen arm list; the drawn arm is the BINDING LEAD of the measured bundle (anti-cherry-pick: priors never choose what gets measured). Full certified receipt: qrng-seal.json',
+      note: 'certified comet-qrng-v1 Fisher-Yates over the frozen arm list; the drawn arm is the BINDING LEAD of the measured bundle (anti-cherry-pick: priors never choose what gets measured). Full certified receipt: qrng-seal.json. Attempt history: qrng-attempts.jsonl (append-only; first direct attempt fail-closed on the bit budget — job consumed, no receipt issued, receipted here).',
     };
     writeFileSync(join(OUT, 'witness.json'), JSON.stringify(w, null, 1) + '\n');
+    appendFileSync(join(OUT, 'qrng-attempts.jsonl'), JSON.stringify({ kind: 'qrng-attempt', at_utc: at, ok: true, stream, drawn_index: sel, drawn_arm: w.drawn_arm, jobId: seal.job?.jobId ?? null }) + '\n');
     log(`QRNG drew arm #${sel} (${w.drawn_arm})`);
   } catch (e) {
-    const w = { kind: 'e6-slice-1-qrng-witness', ts_utc: at, ok: false, error: String(e.message || e).replace(/moth_[A-Za-z0-9]+/g, 'REDACTED').slice(0, 400) };
+    const w = { kind: 'e6-slice-1-qrng-witness', ts_utc: at, ok: false, stream, error: String(e.message || e).replace(/moth_[A-Za-z0-9]+/g, 'REDACTED').slice(0, 400) };
     writeFileSync(join(OUT, 'witness.json'), JSON.stringify(w, null, 1) + '\n');
+    appendFileSync(join(OUT, 'qrng-attempts.jsonl'), JSON.stringify({ kind: 'qrng-attempt', at_utc: at, ok: false, stream, error: w.error }) + '\n');
     log('QRNG FAILED (honest, fail-closed):', w.error);
     process.exit(1);
   }
