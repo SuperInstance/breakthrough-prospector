@@ -22,14 +22,14 @@ How scored claims leave this repo and enter the account's working queue
 | # | id | experiment | cards | B | owning repo | first build |
 |---|---|---|---|---|---|---|
 | 1 | E1 | bug-injection self-play loop + canary receipts | C05+C07 | 80 | MicroMoth-quilt | one evening |
-| 2 | E3 | held-out gate battery (Casey-sealed) | C04 | 60 | MicroMoth-quilt | one day |
-| 3 | E5 | spiral self-edit loop (frozen-driver reach) | C01 | 50 | MicroMoth-quilt | gated behind 1–2 |
-| 4 | E2 | lineage fields + bandit allocation | C03 | 48 | MicroMoth-quilt | instrumentation evening |
-| 5 | E6 | GEPA-class harness optimizer | C02+C09 | 48 | mothquantum | week, checkpointed |
-| 6 | E4 | tools/dream.py ledger miner | C06 | 36 | MicroMoth-quilt | parser evening |
-| 7 | E7 | forge substrate + atlas telemetry (C13) | C13 | 60 | quilt-forge/quilt-atlas | adoption PRs, 5 min each |
-| 8 | E8 | meta-lane two-timescale self-edit | C01+C13 | 48 | prospector queue | one evening (first receipted rule edit) |
-| 9 | E9 | prediction-paired receipts (forge v0.2.0) | C13 | 40 | quilt-forge | one evening (forge-seal field + forge-run verifier) |
+| 2 | E6 | GEPA-class harness optimizer (M10 recipe folded) | C02+C09 | 64 | mothquantum | a day (RRSI proposal-side recipe receipted) |
+| 3 | E3 | held-out gate battery (Casey-sealed) | C04 | 60 | MicroMoth-quilt | one day |
+| 4 | E5 | spiral self-edit loop (frozen-driver reach) | C01 | 50 | MicroMoth-quilt | gated behind 1–2 |
+| 5 | E2 | lineage fields + bandit allocation | C03 | 48 | MicroMoth-quilt | instrumentation evening |
+| 6 | E7 | forge substrate + atlas telemetry (C13) | C13 | 60 | quilt-forge/quilt-atlas | adoption PRs, 5 min each |
+| 7 | E8 | meta-lane two-timescale self-edit | C01+C13 | 48 | prospector queue | one evening (first receipted rule edit) |
+| 8 | E9 | prediction-paired receipts (forge v0.2.0) | C13 | 40 | quilt-forge | one evening (forge-seal field + forge-run verifier) |
+| 9 | E4 | tools/dream.py ledger miner | C06 | 36 | MicroMoth-quilt | parser evening |
 
 Note: E8 and E5 both touch C01 but mutate different loops (dispatcher rules vs
 repo self-edit) — rule 5 satisfied. E9 stacks on E7's shipped substrate; it is
@@ -43,6 +43,7 @@ cards stand on, so it jumps the queue per rule 3.)
 
 ## Queue movement log
 
+- 2026-09-29 ~05:05Z: M10 EXTERNAL REPLICATION folded (lode↔prospector CROSSLINK, fleet-seeds/lode/CROSSLINK.md): google-research/rrsi (arXiv:2609.24972) resolved PASS both legs in lode — cost rule + 30% fewer policy tokens (ID 14.1 vs OOD 4.7). E6 re-scored by tools/score.py (the arbiter): F 3→4 (proposal-side recipe receipted at paper strength: annealed bundled-edit budget, history-conditioned proposer, noise-adjusted floor), VERIFIED citations 1→2 → B 48→64, queue re-ordered E6 to #2. No other row touched.
 - 2026-09-29 ~08:20: E7 pilots opened (qthe-verify#1, exoj#2); D15 wave next.
 - 2026-09-29 ~08:40: D15 wave 1 complete — five adoption PRs open: qthe-verify#1,
   exoj#2, jev-garden#1, fleet-seeds#1 (probe-only, honest no-command), pong-quilt#77
