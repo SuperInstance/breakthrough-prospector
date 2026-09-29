@@ -258,6 +258,12 @@ moved it 0.248→0.4824; the archive-elite transplant crossed 0/3. The
 "zero-signal" verdict FAILED selection-regime-invariance; the "0.45 crossing is
 skeleton-seed-only" verdict survived it. Commits 7368f20 + 8038590,
 branch qcells-exp004-jitter-drop.
+**In-fleet VERIFIED (2026-09-29, qcells lab exp016, PR #22):** skeleton-seed +
+MAP-Elites archive hybrid on exp014's exact fresh panel crosses 6/8
+{3,5,13,29,31,37} vs champion-local 4/8 {3,13,17,19}; agreement only {3,13} →
+ARCHIVE NEUTRAL (top of pre-registered band): the archive converts the hard
+class 29/31/37 but loses the easy class 17/19. N/M rate read per ROOT-LOTTERY;
+SKELETON-IS-A-RATE stands. Suite 154/154, exp001 guard byte-identical.
 
 **Fleet instance.** Lane C's diversity search against the QPAM kernel is the
 account's first QD loop.
