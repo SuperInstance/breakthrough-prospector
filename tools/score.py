@@ -33,6 +33,9 @@ EXPERIMENTS = [
     ("E6", "GEPA-class harness optimizer for mothquantum (D8)", "C02+C09",
      4, 3, 4, 1, False, True,
      "harness-over-weights on our native split; needs a held-out circuit slice"),
+    ("E7", "forge substrate + atlas telemetry (D15/D16)", "C13",
+     4, 5, 3, 2, False, True,
+     "the floor every other card stands on; atlas 2026-09-28 sweep is the verified citation"),
 ]
 
 

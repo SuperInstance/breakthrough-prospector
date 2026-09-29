@@ -283,5 +283,37 @@ with a held-out-gate receipt. Free — it's a discipline, not a build.
 
 ---
 
+## C13 — Soft substrate precedes smart loops
+
+**Statement.** A constellation cannot run self-improvement loops until its
+low-level execution substrate is uniform enough that a receipt from any repo is
+trusted without per-repo archaeology. And the substrate must be *soft* — it
+reports, never blocks — because hard gates get switched off by annoyed lanes
+while receipts get kept.
+
+**Instances.** quilt-atlas's own honesty law ("CI is probed only on the
+top-motion slice — absence elsewhere is UNMEASURED, never reported as zero") [V].
+The 2026-09-28 atlas sweep: of the 24 most-pushed repos, **15 have zero
+workflows**, and the nine that do speak nine dialects (`build.yml`, `smoke.yml`,
+`garden.yml`, `merge-gate.yml`, twelve files in SmartCRDT) [V].
+
+**Fleet instance.** Built `quilt-forge` (one reusable workflow; probe + 3-root
+seal; zero secrets — the atlas *pulls* seals on its existing 6h schedule). Pilot
+adoptions: qthe-verify#1, exoj#2 — both with local pre-merge evidence
+(12/12 and 3/3 across roots 7/11/23, divergence=false).
+
+**Gap.** 2 of 4,854 repos on the substrate. The atlas does not yet consume forge
+seals, so constellation health (motion honesty, root divergence, receipt
+latency) is still unmeasured.
+
+**Hook.** E7: adoption wave across the top-motion slice (one 5-minute PR per
+repo), then atlas v-next pulls seals. The higher abstraction Casey asked for
+(2026-09-29 07:28) sits directly on this layer: streamline the low level soft,
+then abstract.
+
+---
+
 *Cross-references: C04 gates C01/C05/C07/C12. C03 instruments C05. C06 consumes
-C03's lineage fields. C11 reuses Lane C's QD engine.*
+C03's lineage fields. C11 reuses Lane C's QD engine. C13 is the floor they all
+stand on — receipts a constellation can trust are the input every other card
+assumes.*

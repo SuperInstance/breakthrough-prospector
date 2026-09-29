@@ -3,6 +3,22 @@
 First full sweep under the prospector mandate (Casey, 2026-09-29 ~07:26 GMT+8).
 All claims below fed registry cards; this log is the raw record.
 
+## 2026-09-29 constellation entry (fleet-internal mission)
+
+- **Source**: https://github.com/SuperInstance/quilt-atlas (generated 2026-09-28T23:16Z)
+- **Claim**: Of the 24 most-pushed repos, 15 have zero CI workflows; the nine with
+  workflows use nine dialects. Account-wide CI beyond the top-motion slice is
+  UNMEASURED by the atlas's own honesty law.
+- **Evidence**: atlas README top-motion table, inline.
+- **Tag**: VERIFIED
+- **Feeds**: C13
+- **Action**: built quilt-forge (soft receipts substrate, one reusable workflow,
+  probe + 3-root seal, zero secrets, pull-model telemetry); pilots qthe-verify#1
+  and exoj#2 opened with local 3-root evidence (12/12 and 3/3, divergence=false).
+- **Casey framing (07:28)**: "we can abstract higher if the low level is
+  streamlined for our use and soft in its dynamics" — C13 is that framing as a
+  card; D15/D16 are its builds.
+
 ## Weco / AIDE² (the anchor — deep-read)
 
 - **Source**: https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement (2026-07-14) + https://arxiv.org/html/2609.26457v1 + ODS interview (2026-09-08)

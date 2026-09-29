@@ -27,6 +27,13 @@ How scored claims leave this repo and enter the account's working queue
 | 4 | E2 | lineage fields + bandit allocation | C03 | 48 | MicroMoth-quilt | instrumentation evening |
 | 5 | E6 | GEPA-class harness optimizer | C02+C09 | 48 | mothquantum | week, checkpointed |
 | 6 | E4 | tools/dream.py ledger miner | C06 | 36 | MicroMoth-quilt | parser evening |
+| 7 | E7 | forge substrate + atlas telemetry (C13) | C13 | 60 | quilt-forge/quilt-atlas | adoption PRs, 5 min each |
 
 (E4 sits below the gate — queued as infrastructure because its material already
-exists and it feeds E2's lineage work.)
+exists and it feeds E2's lineage work. E7 sits above the gate: VERIFIED citations
+are the atlas numbers themselves; it unblocks D15/D16 and is the floor the other
+cards stand on, so it jumps the queue per rule 3.)
+
+## Queue movement log
+
+- 2026-09-29 ~08:20: E7 pilots opened (qthe-verify#1, exoj#2); D15 wave next.

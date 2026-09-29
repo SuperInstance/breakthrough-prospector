@@ -73,6 +73,18 @@ Legend: **[P0]** do first (unblocks others), **[P1]** next, **[P2]** when P0/P1 
   improvement signal tunes the ramp. Already the fleet's most legible L0→L1 demo
   once a held-out performance gate exists.
 
+## quilt-forge / quilt-atlas (the constellation substrate)
+
+- **[P0] D15 — forge adoption wave** (C13). Pilots open: qthe-verify#1, exoj#2
+  (both with local 3-root evidence). Next adopters in push order: jev-garden,
+  pong-quilt, fleet-seeds, quilt-jepa, qthe. One PR per repo, five minutes each,
+  receipts over gates. Non-adopters stay UNMEASURED — never zero (atlas law).
+- **[P1] D16 — atlas consumes forge seals** (C13). Extend build_atlas.mjs to pull
+  `forge` workflow runs: motion-honesty column (seals/workflows per family),
+  root-divergence index (non-zero divergence = a repo admitting seed-sensitivity
+  it didn't know), receipt-latency view (the fleet's soft performance surface).
+  No webhooks, no secrets: pull on the existing 6h schedule.
+
 ---
 
 ## Sequencing
