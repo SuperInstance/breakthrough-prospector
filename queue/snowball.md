@@ -28,6 +28,13 @@ How scored claims leave this repo and enter the account's working queue
 | 5 | E6 | GEPA-class harness optimizer | C02+C09 | 48 | mothquantum | week, checkpointed |
 | 6 | E4 | tools/dream.py ledger miner | C06 | 36 | MicroMoth-quilt | parser evening |
 | 7 | E7 | forge substrate + atlas telemetry (C13) | C13 | 60 | quilt-forge/quilt-atlas | adoption PRs, 5 min each |
+| 8 | E8 | meta-lane two-timescale self-edit | C01+C13 | 48 | prospector queue | one evening (first receipted rule edit) |
+| 9 | E9 | prediction-paired receipts (forge v0.2.0) | C13 | 40 | quilt-forge | one evening (forge-seal field + forge-run verifier) |
+
+Note: E8 and E5 both touch C01 but mutate different loops (dispatcher rules vs
+repo self-edit) — rule 5 satisfied. E9 stacks on E7's shipped substrate; it is
+the AHE decision-observability pattern from the 2026-09-29 literature sweep
+(research/iterative-lanes-2026-09-29.md).
 
 (E4 sits below the gate — queued as infrastructure because its material already
 exists and it feeds E2's lineage work. E7 sits above the gate: VERIFIED citations
@@ -53,3 +60,12 @@ cards stand on, so it jumps the queue per rule 3.)
   semantics); qcells/ doesn't exist (battery = tests/, 144 cases); the three 0.00
   shapes are named coverage holes (rz-phase pin, noise_model-vs-sampled-counts,
   r<=cumu measure-zero). These holes are the next delta candidates.
+- 2026-09-29 ~09:25: literature sweep **iterative-lanes-2026-09-29.md** (research/) —
+  six just-released results cross-read for multi-loop synergy: MetaSkill-Evolve
+  two-timescale (slow ring = entire ALFWorld gain; H-staleness costs 9.1pt),
+  AHE decision-observability (edit + prediction + next-round verify), PILOT
+  verifier-gated carry, Misevolution (memory decay; references-not-rules backs
+  forge softness doctrine), ReflexGrad coupled multi-period loops, single-multi
+  distill loop. Queue gains E8 (meta-lane two-timescale, C01+C13, B48 RUN) and
+  E9 (prediction-paired receipts, forge v0.2.0, C13, B40 RUN). Synergy matrix
+  maps each external pattern to a live fleet lane.

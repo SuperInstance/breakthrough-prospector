@@ -36,6 +36,12 @@ EXPERIMENTS = [
     ("E7", "forge substrate + atlas telemetry (D15/D16)", "C13",
      4, 5, 3, 2, False, True,
      "the floor every other card stands on; atlas 2026-09-28 sweep is the verified citation"),
+    ("E8", "meta-lane two-timescale self-edit (exp017-class)", "C01+C13",
+     4, 4, 3, 1, False, True,
+     "slow ring rewrites one queue artifact per K pulses, receipted; MetaSkill-Evolve H-staleness law bounds cadence; distinct loop from E5 (dispatcher rules vs repo self-edit)"),
+    ("E9", "prediction-paired receipts (forge v0.2.0)", "C13",
+     4, 5, 2, 1, False, True,
+     "AHE decision-observability receipts-native: edit + self-declared prediction + next-run CONFIRMED/REFUTED; feasibility is forge E7 already shipped"),
 ]
 
 
