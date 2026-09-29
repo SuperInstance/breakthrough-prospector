@@ -43,6 +43,10 @@ cards stand on, so it jumps the queue per rule 3.)
 - Lab pulse 07:56: exp015 ELITISM-ARTIFACT (partial) VERIFIED — fed registry C11 as
   an in-fleet VERIFIED instance; SRIP diagnostic (selection-regime-invariance probe)
   proposed as the reusable tile it implies.
+- Lab pulse 08:21: exp015 **sealed as MicroMoth-quilt PR #21** (branch
+  exp015-illumination-receipt, d499a93): 11 pins, suite 155/155 green. Crossing
+  stays skeleton-only 3/3 (r7 0.4355 named), transplant 0/3. Next: exp016 hybrid
+  or hard-root autopsy. Lab flags possible trivial manifest conflict with PR #19.
 - 2026-09-29 ~08:20: **E1 COMPLETE** — catch 43/60 = 0.72 (nine shapes 1.00,
   literal_rewrite 0.60, three shapes 0.00), canaries 9/12, PR MicroMoth-quilt#20.
   Honest negatives: baseline manifest-drift RED on pristine main (delta-based catch
