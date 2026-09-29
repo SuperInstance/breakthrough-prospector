@@ -1,0 +1,80 @@
+{
+ "kind": "e6-slice-1-registration",
+ "slice": "E6 first vertical slice — GEPA-class harness optimizer (M10 recipe folded), answer-wire abstraction",
+ "claim_ids": ["C02", "C09"],
+ "queue_row": "E6 (queue #2, B 64, F 4): GEPA-class harness optimizer, M10 recipe folded",
+ "written_utc": "2026-09-29T17:24:44Z (pre-registration; sha256 of this file receipted in receipts/verdict.json and the results commit)",
+ "seal_method": "git push of the registration commit BEFORE any arm measurement and BEFORE any external call. This repo's tools/ contains only score.py (no seal tool) — the pushed registration commit IS the seal of record. The two certified mothquantum seals budgeted below are reserved for the anti-cherry-pick QRNG draw.",
+ "target": {
+  "artifact": "fleet-seeds/lode/engine/engine_run.mjs const KEYS — the lode engine's scout→extract keyword lens (14 entries)",
+  "engine_run_sha256": "098fe0f3a61688eb37fa678da50d31054f244633938169cce46b64275b7fac0d",
+  "why": "real, small, deterministic, already-measured target: the lens decides which discovery candidates reach the priors stage; its quality is measurable offline against the engine's own COMMITTED receipt corpora (no network, no engine modification — this slice never edits fleet-seeds; a promoted KEYS is a proposal artifact for the lode keeper, compose-don't-clobber)",
+  "baseline_KEYS": ["self-improv", "self-evolv", "recursive", "meta-learn", "harness", "outer loop", "reward hacking", "reward-hacking", "verifier", "playbook", "skill librar", "curriculum", "map-elites", "archive"]
+ },
+ "mutation_space": {
+  "operator": "single-keyword substitution (replace one baseline entry with one pool term)",
+  "arms_file": "arms.json",
+  "arms_sha256": "23eec18d31cd6b8f258fb060732c6e88d7fdbac890879632787e03318ee748b4",
+  "n_arms": 8,
+  "slot_recipe": "4 lowest catalog-attestation baseline entries (ties → KEYS order): outer loop(0), reward-hacking(0), reward hacking(1, idx6), playbook(1, idx9)",
+  "pool_recipe": "first 8 distinct leaf-heading vocabulary terms of the committed awesome-rsi catalog receipt, in appearance order, not covered by baseline",
+  "pairing_rule": "T1,T2→slot1; T3,T4→slot2; T5,T6→slot3; T7,T8→slot4",
+  "M10_history_conditioning": "no previously-refuted E6 mutations exist (first slice) — the mutation-history ledger starts empty, receipted here per M10's proposer-conditioned-on-history law"
+ },
+ "corpora": [
+  {"name": "run5-scout", "file": "fleet-seeds/lode/engine/receipts/2026-09-29-engine-run-5/scout/raw.json", "items": 96},
+  {"name": "run6-scout", "file": "fleet-seeds/lode/engine/receipts/2026-09-29-engine-run-6/scout/raw.json", "items": 96},
+  {"name": "awesome-rsi-catalog", "file": "fleet-seeds/lode/engine/receipts/2026-09-29-engine-run-6/review-c1-awesome-rsi-raw.md", "items": 248}
+ ],
+ "corpus_note": "run-5 and run-6 scout corpora are near-identical sweeps (one item reordered: The-AIE/the-gibson); under the current history state they yield identical extractions. The committed record is weighted as-is (N=3) for ALL arms and the baseline alike — no arm-dependent asymmetry.",
+ "metric_formula": "M(K) = (1/3) * sum over the three committed corpora of [ mu_c(K) + f_c(K) ], where score(item) = count of K's entries whose lowercase substring occurs in the item's JSON blob; pool = items with score >= 2; stable sort by score desc; dedup by normalized title keeping first; top-9; history conditioning (current mine ledger: mines.jsonl M1-M11 both-channel bare-id markers + engine-run-1..6 QRNG-drawn cards by normalized title); mu_c = mean score of SURVIVING candidates (0 if none); f_c = surviving count (the fresh-candidate count: candidates that would reach the priors stage as new cards).",
+ "baseline_pin": {
+  "baseline_M": 7.0740740740740735,
+  "baseline_totalF": 15,
+  "per_corpus": [
+   {"corpus": "run5-scout", "pool": 35, "pre": 9, "survivors": 3, "mu": 2},
+   {"corpus": "run6-scout", "pool": 35, "pre": 9, "survivors": 3, "mu": 2},
+   {"corpus": "awesome-rsi-catalog", "pool": 33, "pre": 9, "survivors": 9, "mu": 2.2222222222222223}
+  ],
+  "measured_by": "receipts/baseline.json (committed pre-registration, sha256 52c9f8fb8751d221ae7f3a60f0cab9f1d03f021f107d34c5bceb0c9d6ddf7c71); decide re-derives it and asserts bit-exact equality"
+ },
+ "validity_gate": "instrumentation must reproduce the COMMITTED engine receipts before any arm is trusted: (1) run-6 corpus under run-6-time history state → survivors byte-equal committed run-6 candidates.json; (2) run-5 corpus under run-5-time state → survivors equal committed run-5 candidates.json minus EXACTLY the two receipted post-fixer consequences (M3 collision card arxiv 2609.26457; M11 URL-form match arxiv 2609.34924) renumbered; (3) derived previously-drawn lists equal the committed history.json lists. Any failure → INVALID-INSTRUMENTATION honest partial: nothing measured, nothing promoted.",
+ "decision_rule": {
+  "bundle": "M4/M10 budget cap as selection pressure: bundle budget B = max(1, ceil(B0 * ANNEAL^t)), B0=3, ANNEAL=0.7, t=0 prior E6 slices → B=3. Bundle = certified QRNG lead + (B-1) top-noul fills (noul desc, arm-index tie-break). ONLY bundle arms are measured; the other 5 arms stay frozen-unmeasured (never peeked).",
+  "anti_cherry_pick": "the priors NEVER choose what gets measured — the binding lead is a certified comet-qrng-v1 draw over the frozen 8-arm list; the LLM choice is receipted as a reflective prior only",
+  "pass_rule": "PASS iff at least one measured bundle arm A satisfies: M(A) >= 1.05 * baseline_M (= 7.427777777777777) AND totalF(A) >= baseline_totalF (= 15). PROMOTED = eligible arm with max M (arm-id lexicographic tie-break); the promoted KEYS is the baseline with that arm's substitution — a PROPOSAL artifact, adoption is the lode keeper's next act.",
+  "pass_margin_relative": 0.05,
+  "margin_note": "0.05 relative chosen a priori, before any arm measurement; paired with a hard no-recall-collapse floor (totalF >= 15) so precision cannot be bought with recall",
+  "fail_branch": "if no measured bundle arm meets both conditions: seal FAIL verbatim in receipts/decide.json + verdict.md — no threshold surgery, no post-hoc metric revision, unmeasured arms stay frozen; failure_mode and next_probe named",
+  "boring_branch": "if the gate fails only because arms are metric-inert (M equal to baseline within the margin AND totalF unchanged), the FAIL verdict additionally records mutation_space_inert: true"
+ },
+ "cost_rule": {
+  "law": "M10 (arXiv:2609.24972): added inference cost must be paid for by measured gain on the target",
+  "added_spend": ["exactly 1 typesafe.ai systemone battery call (8 noul + 1 choice, answer wire, usage receipted)", "exactly 1 certified mothquantum comet-qrng-v1 seal (Fisher-Yates over the 8 frozen arms)"],
+  "caps": {"typesafe_calls_max": 4, "moth_seals_max": 2, "other_external_usd": 0},
+  "settlement": "spend is PAID iff the verdict is PASS (a measured-better KEYS variant exists from the bundle); on FAIL or honest partial the receipt records NOT_PAID — the added spend bought an honest negative, not gain"
+ },
+ "budget_and_abort": {
+  "wall_time": "each foreground stage < 5 min; whole slice within one session",
+  "abort_line": "external channel failure (typesafe/mothquantum non-2xx or timeout) → fail-closed honest partial receipted; $0 untracked spend"
+ },
+ "input_sha256": {
+  "engine_run": "098fe0f3a61688eb37fa678da50d31054f244633938169cce46b64275b7fac0d",
+  "mines": "12f7dc67434293b318f2448db79b0c9d5b966f195189bf9f4f24384d7846c621",
+  "run5_raw": "60aec453e9a6f951bed47bda077d2b5be13e7a3ee3515e1e0adc18150a8d7dc1",
+  "run6_raw": "e6f6b7d3f170e8c363c8adc90668865751715a0b676fafcc2082d567896e898f",
+  "catalog": "f58b17ce53e83159b9025b7ef31dfa527399fbd2dfc204de423bb2ce2cee40cf",
+  "run5_cands": "f8a186dd2fd37db372ab62a8b3bc5dc47e8185d734b47baafc923731e56aca60",
+  "run6_cands": "d1ec121ad091aadd6d3b956c3d36bc196788683fdfef0a5bac529c10b791d904",
+  "run5_hist": "7342931bf3a4b0740eaf06b09de765b0752f1b66d7eba0d5fdd79249801e8e3a",
+  "run6_hist": "af97d5ecce2ac152651786e987656da725fe467cad9de50f7648f22a11f75697",
+  "witness_run1": "401510b7de02c58a46073898521dedb1b920edf47f45d015459e977c1d897535",
+  "witness_run2": "de2638727cdc473755e32915378318728d0d1fc111f65f0acd0c48d0bc3a7eb0",
+  "witness_run3": "8e298b044a1ca70508a0d519359c7b63a223b3c56139fb06be7ded1f79d29928",
+  "witness_run4": "1013fef863023ee2846ca330ac7d14c13e463192d890a8131b7374d2aa87f27b",
+  "witness_run5": "b705d32e300fd475be55f0bff39852a2078ea01292ea17f467f0614b8b56d663",
+  "witness_run6": "a8c1b49476c76e973680f33881af5344a477681940b6430e3582db7c42978ba9"
+ },
+ "runner_sha256": "63556a114744a3b423e3e58cbf8e17fd1e7db50b7829b0196215064f7424089e",
+ "runner": "e6_slice1.mjs (stages: baseline | priors | draw | decide [--check] | determinism; deterministic local execution; reuses fleet-seeds/lode/engine/systemone_client.mjs and fleet-seeds/tools/moth-seal.mjs verbatim — no reinvented channels)"
+}
