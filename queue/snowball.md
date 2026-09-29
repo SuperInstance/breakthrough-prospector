@@ -37,3 +37,9 @@ cards stand on, so it jumps the queue per rule 3.)
 ## Queue movement log
 
 - 2026-09-29 ~08:20: E7 pilots opened (qthe-verify#1, exoj#2); D15 wave next.
+- 2026-09-29 ~08:40: D15 wave 1 complete — five adoption PRs open: qthe-verify#1,
+  exoj#2, jev-garden#1, fleet-seeds#1 (probe-only, honest no-command), pong-quilt#77
+  (257/262 local; 3 fails = receipt-completeness class refusing shallow clones by design).
+- Lab pulse 07:56: exp015 ELITISM-ARTIFACT (partial) VERIFIED — fed registry C11 as
+  an in-fleet VERIFIED instance; SRIP diagnostic (selection-regime-invariance probe)
+  proposed as the reusable tile it implies.

@@ -250,6 +250,14 @@ itself tells you which dimensions of the design space actually matter.
 [V]. ShinkaEvolve: MoE load-balancing loss beating DeepSeek SoTA in 30
 generations; circle-packing SoTA in ~150 evals [R]. Lane C (quantum-audio-honesty)
 already runs a QD-Elites variant against a fixed kernel [V — ours].
+**In-fleet VERIFIED (2026-09-29, qcells lab exp015):** illuminating the "frozen
+unaided search" lane with two archives (verify-balance×length, balance×entropy)
+held elites at held-out balance > 0 (max 0.248, r23) that champion search
+discarded every generation — illumination moved the ceiling 0→0.248; seeding
+moved it 0.248→0.4824; the archive-elite transplant crossed 0/3. The
+"zero-signal" verdict FAILED selection-regime-invariance; the "0.45 crossing is
+skeleton-seed-only" verdict survived it. Commits 7368f20 + 8038590,
+branch qcells-exp004-jitter-drop.
 
 **Fleet instance.** Lane C's diversity search against the QPAM kernel is the
 account's first QD loop.
