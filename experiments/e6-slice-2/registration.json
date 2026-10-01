@@ -1,0 +1,187 @@
+{
+ "kind": "e6-slice-2-registration",
+ "slice": "E6 second vertical slice — RE-REGISTRATION of slice-1 on the RECOVERED comet-qrng-v1 channel (same frozen arms, same pinned baseline, same metric/margins; draw the lead, measure the B=3 bundle, settle the cost rule)",
+ "claim_ids": [
+  "C02",
+  "C09"
+ ],
+ "queue_row": "E6 (queue #2, B 64, F 4): GEPA-class harness optimizer, M10 recipe folded",
+ "written_utc": "2026-09-29 (pre-registration; sha256 of this file receipted in the results commit; the pushed registration commit IS the seal of record)",
+ "lineage": "slice-1 (experiments/e6-slice-1/) sealed HONEST-PARTIAL (qrng-channel-degraded) at commit c25d1e4: registration lineage e756f09 (sealed) -> f3ad79e (schema repair) -> bdc8c04 (pre-draw repair) -> c25d1e4 (results). The certified draw never landed (job #1 direct fail-closed 40<112 bits; job #2 prf fail-closed on an incomplete certification payload; <=2-job cap consumed, 0 seals). Slice-1's verdict.md registered THIS probe: fresh registration on a recovered channel, same frozen arms, same pinned baseline, same metric/margins. Channel status: comet-qrng-v1 HEALTHY per the wave-63 channel-health probe (registered precondition below).",
+ "seal_method": "git push of the registration commit BEFORE any arm measurement and BEFORE any external call. This repo's tools/ contains only score.py (no seal tool) — the pushed registration commit IS the seal of record. The certified mothquantum jobs budgeted below are reserved for the anti-cherry-pick QRNG draw.",
+ "target": {
+  "artifact": "fleet-seeds/lode/engine/engine_run.mjs const KEYS — the lode engine's scout→extract keyword lens (14 entries)",
+  "engine_run_sha256": "098fe0f3a61688eb37fa678da50d31054f244633938169cce46b64275b7fac0d",
+  "why": "identical to slice-1: real, small, deterministic, already-measured target; measurable offline against the engine's own COMMITTED receipt corpora (no network, no engine modification — a promoted KEYS is a proposal artifact for the lode keeper, compose-don't-clobber)",
+  "baseline_KEYS": [
+   "self-improv",
+   "self-evolv",
+   "recursive",
+   "meta-learn",
+   "harness",
+   "outer loop",
+   "reward hacking",
+   "reward-hacking",
+   "verifier",
+   "playbook",
+   "skill librar",
+   "curriculum",
+   "map-elites",
+   "archive"
+  ]
+ },
+ "mutation_space": {
+  "operator": "single-keyword substitution (replace one baseline entry with one pool term)",
+  "arms_file": "arms.json — BYTE-IDENTICAL copy of slice-1's arms.json (no re-freeze; frozen before slice-1's priors call, draw, and any measurement, and never unfrozen since)",
+  "n_arms": 8,
+  "slot_recipe": "4 lowest catalog-attestation baseline entries (ties → KEYS order): outer loop(0), reward-hacking(0), reward hacking(1, idx6), playbook(1, idx9)",
+  "pool_recipe": "first 8 distinct leaf-heading vocabulary terms of the committed awesome-rsi catalog receipt, in appearance order, not covered by baseline",
+  "pairing_rule": "T1,T2→slot1; T3,T4→slot2; T5,T6→slot3; T7,T8→slot4",
+  "M10_history_conditioning": "still no previously-REFUTED E6 mutations: slice-1 measured nothing (fail-closed before any arm was measured), so the mutation-refutation ledger remains empty; the arms space itself is carried unchanged (arms sha re-verified below). Receipted per M10's proposer-conditioned-on-history law."
+ },
+ "corpora": [
+  {
+   "name": "run5-scout",
+   "file": "fleet-seeds/lode/engine/receipts/2026-09-29-engine-run-5/scout/raw.json",
+   "items": 96
+  },
+  {
+   "name": "run6-scout",
+   "file": "fleet-seeds/lode/engine/receipts/2026-09-29-engine-run-6/scout/raw.json",
+   "items": 96
+  },
+  {
+   "name": "awesome-rsi-catalog",
+   "file": "fleet-seeds/lode/engine/receipts/2026-09-29-engine-run-6/review-c1-awesome-rsi-raw.md",
+   "items": 248
+  }
+ ],
+ "corpus_note": "identical to slice-1: the three COMMITTED corpora, weighted as-is (N=3) for ALL arms and the baseline alike — no arm-dependent asymmetry.",
+ "metric_formula": "M(K) = (1/3) * sum over the three committed corpora of [ mu_c(K) + f_c(K) ], where score(item) = count of K's entries whose lowercase substring occurs in the item's JSON blob; pool = items with score >= 2; stable sort by score desc; dedup by normalized title keeping first; top-9; history conditioning (current mine ledger: mines.jsonl M1-M12 both-channel bare-id markers + engine-run-1..6 QRNG-drawn cards by normalized title; the ledger was M1-M11 at slice-1's seal and M12 was appended upstream in fleet-seeds 2bc52a5 after slice-1 sealed — the metric conditions on the CURRENT ledger per M10's history law, and the append event is handled by the registered LEDGER-EVENT AMENDMENT in validity_gate); mu_c = mean score of SURVIVING candidates (0 if none); f_c = surviving count (the fresh-candidate count: candidates that would reach the priors stage as new cards). IDENTICAL to slice-1's registered formula.",
+ "baseline_pin": {
+  "per_corpus": [
+   {
+    "corpus": "run5-scout",
+    "pool": 35,
+    "pre": 9,
+    "survivors": 3,
+    "mu": 2
+   },
+   {
+    "corpus": "run6-scout",
+    "pool": 35,
+    "pre": 9,
+    "survivors": 3,
+    "mu": 2
+   },
+   {
+    "corpus": "awesome-rsi-catalog",
+    "pool": 33,
+    "pre": 9,
+    "survivors": 9,
+    "mu": 2.2222222222222223
+   }
+  ],
+  "measured_by": "slice-1's receipts/baseline.json (committed pre-registration there, sha256 52c9f8fb8751d221ae7f3a60f0cab9f1d03f021f107d34c5bceb0c9d6ddf7c71, pinned below as input baseline via slice-1 receipt); THIS slice's runner re-derives the baseline from the live corpora in every stage and asserts bit-exact equality with baseline_M/baseline_totalF below (decide aborts INVALID-INSTRUMENTATION otherwise). Slice-2 adds no new baseline measurement — the pin of record is carried."
+ },
+ "validity_gate": "identical to slice-1 EXCEPT the registered LEDGER-EVENT AMENDMENT (pre-draw repair #1, receipted in draft_reconciliation): instrumentation must reproduce the COMMITTED engine receipts before any arm is trusted. (1) run-6 corpus under the CURRENT history state → exclusions equal committed run-6 exclusions AND survivors byte-equal committed run-6 candidates.json, with the committed run-6 marker-id sequence (M1-M11) verified as an append-only PREFIX of the live mines.jsonl sequence (M1-M12) and the appended ids receipted. Slice-1's original markers_n==11 equality could never survive a legitimate append-only ledger event (M12 sealed in fleet-seeds 2bc52a5); the amendment proves strictly more than the original: append-only ledger integrity PLUS replay fidelity under the live state. (2) run-5 corpus under run-5-time state → survivors equal committed run-5 candidates.json minus EXACTLY the two receipted post-fixer consequences (M3 collision card arxiv 2609.26457; M11 URL-form match arxiv 2609.34924) renumbered. (3) derived previously-drawn lists equal the committed history.json lists. Any failure → INVALID-INSTRUMENTATION honest partial: nothing measured, nothing promoted.",
+ "decision_rule": {
+  "bundle": "M4/M10 budget cap as selection pressure: bundle budget B = max(1, ceil(B0 * ANNEAL^t)), B0=3, ANNEAL=0.7, t=prior_e6_slices=1 → B = ceil(2.1) = 3. Bundle = certified QRNG lead + (B-1) top-noul fills (noul desc, arm-index tie-break). ONLY bundle arms are measured; the other 5 arms stay frozen-unmeasured (never peeked).",
+  "anti_cherry_pick": "the priors NEVER choose what gets measured — the binding lead is a certified comet-qrng-v1 draw over the frozen 8-arm list; the LLM choice is receipted as a reflective prior only. THE FIRST CERTIFIED SEAL BINDS: no re-draw after a seal for any reason (moth-seal's singleUse seed law); draw-ladder retries exist only for channel failure BEFORE any seal, and every attempt is ledgered.",
+  "margin_note": "0.05 relative chosen a priori (unchanged from slice-1, which chose it before any arm measurement), paired with a hard no-recall-collapse floor (totalF >= 15) so precision cannot be bought with recall",
+  "fail_branch": "if no measured bundle arm meets both conditions: seal FAIL verbatim in receipts/decide.json + verdict.md — no threshold surgery, no post-hoc metric revision, unmeasured arms stay frozen; failure_mode and next_probe named",
+  "boring_branch": "if the gate fails only because arms are metric-inert (M equal to baseline within the margin AND totalF unchanged), the FAIL verdict additionally records mutation_space_inert: true"
+ },
+ "cost_rule": {
+  "law": "M10 (arXiv:2609.24972): added inference cost must be paid for by measured gain on the target",
+  "added_spend": [
+   "ZERO typesafe calls — the slice-1 sealed reflective priors of record are REUSED (see priors_source below; registered choice, reasoning receipted)",
+   "mothquantum comet-qrng-v1 jobs as consumed by the registered draw ladder (see cap below); each attempt append-only ledgered in receipts/qrng-attempts.jsonl + receipts/usage.jsonl"
+  ],
+  "caps": {
+   "typesafe_calls_max": 0,
+   "moth_jobs_max": 3,
+   "moth_jobs_cap_note": "CAP REGISTERED IN JOBS, NOT SEALS — wave-62 lesson (slice-1 consumed 2 jobs with ZERO seals issued; seals-issued accounting silently under-counts channel degradation). The draw ladder may consume at most 3 comet jobs total in this slice; it stops at the first certified seal or when the job cap is consumed, whichever comes first.",
+   "other_external_usd": 0
+  },
+  "draw_ladder": "registered before any draw: attempt 1 stream=direct (certified bytes consumed directly; feasible now that the channel delivers ~1136 extracted bits/job vs the 112 needed for pool 8); on any fail-closed, attempt 2 stream=prf (moth-seal's own registered extension: certified bytes seed the SHA-256 counter stream, effectiveEntropyBits declared in the receipt); on any fail-closed, attempt 3 stream=prf; then stop. Every attempt ledgered with job_consumed accounting (any fail-closed after submit consumed a job; local pre-submit failures consumed nothing). No stream choice is made post-hoc — this ladder IS the registration.",
+  "settlement": "spend is PAID iff the verdict is PASS (a measured-better KEYS variant exists from the bundle); on FAIL or honest partial the receipt records NOT_PAID — the added spend bought an honest negative, not gain"
+ },
+ "priors_source": {
+  "decision": "REUSE the slice-1 sealed reflective priors of record; ZERO fresh battery calls in this slice",
+  "receipt": "experiments/e6-slice-1/receipts/priors.json (sha256 9969fa3f69d557bf24cfc6911abe8ca7ab125868f15b67812df454b2441f13c7, pinned below; sealed there 2026-09-29T17:27:14.809Z, model jev-1.13.0, 2808 in / 235 out, answer wire: 8 noul p_gain + 1 choice)",
+  "binding": "the runner re-asserts priors.ok === true AND priors.arms_sha256 === this registration's arms_sha256 (23eec18d…) — the priors are bound to the SAME frozen arm space they were elicited on",
+  "reasoning": "registered choice, receipted: (a) the priors' domain is bit-identical to slice-1's (same arms sha, same baseline pin, same metric formula, same corpora pins — all re-verified at registration time), so a fresh battery call samples the same question for zero marginal selection-relevant information; (b) M10 cost rule: added spend must buy measured gain — re-spending a call to re-derive priors that CANNOT select anything (the QRNG draw picks the lead; noul only fills the bundle) adds cost without information; (c) the wave-62 call was already spent and receipted on exactly this arm space — reusing its sealed output is the frugal-honest path, and the sha pin keeps it fully auditable; (d) the counterfactual re-spend would buy one thing: independence of the priors from slice-1's priors — but the priors never select anything in this design, so that independence buys nothing measurable. The noul fill values carried: A1 0.14 / A2 0.11 / A3 0.18 / A4 0.18 / A5 0.18 / A6 0.17 / A7 0.16 / A8 0.12; first_measure choice A1 (non-binding, carried as receipted)."
+ },
+ "channel_health_precondition": {
+  "receipt": "receipts/channel-health-probe-w63.json — byte-identical copy of the wave-63 keeper-lane probe result (source /home/z/my-project/scripts/probe63_moth_result.json, sha256 5d2f94fc16fb0a04fca284584993eea4aa68b5c738369fa3e3852e6e23014498); provenance note: receipts/channel-health-probe-w63.provenance.md (probe job 06884e96-1960-44f5-a7a4-3c59f24ad003)",
+  "required_checks": "the runner's draw stage re-verifies, fail-closed BEFORE submitting any job: entropy_report.health_passed===true; entropy_report.budget_bits>0; entropy_report.h_bit>0; bell_witness.S > bell_witness.classical_bound; extractor.kind==='toeplitz'; random.hex even-length non-empty hex; random.bits>0. These are exactly the certification fields whose absence fail-closed slice-1's job #2 (CertError).",
+  "probe_outcome_of_record": "HEALTHY — health_passed true; budget 1264.6849661751767 bits; CHSH S=2.8193359375 > 2 (3σ violation); 142 bytes / 1136 extracted bits delivered (requested 512, budget-limited). The probe drew no arm and selected nothing; it is channel operations, not E6 selection spend."
+ },
+ "draft_reconciliation": {
+  "status": "PRE-COMMIT, PRE-DRAW, ZERO-MEASUREMENT — the prior incarnation drafted this registration + runner but died before any commit/push/draw; lane 63-d-r audited everything independently and reconciled the draft before the registration commit (which is the seal of record). No arm was ever measured or peeked at any point; the only spend to date is the keeper-lane channel-health probe (receipted, channel operations).",
+  "findings": [
+   {
+    "finding": "runner_sha256 pin was STALE: registration.json pinned 2d3facd0e0162e7df5c679090ec89693f54244c11f2781f57c519d4dd695a6fc — an intermediate pre-amendment draft — while the on-disk runner of record hashes 1d52ad778fb7c0c033413665027e9775c01356d9d3d0d6168a2e921ec0362e82. Proof of ordering: the stale draft receipt baseline.pre-amendment-draft.json (sha256 bf5b70fa4cac36b24193f8e7b1052f2b07244ddf204fdb20454025e22db2ba67, preserved verbatim, ts_utc 2026-10-01T23:16:58.286Z) carries run-6 gate fields the pre-amendment runner emits (history_state_matches_committed:false under the 12-row live ledger, markers_n 12) and LACKS the amendment fields the on-disk runner emits — so the receipt predates the amendment and the pinned sha predates the on-disk file. Same defect class as slice-1's verdict.md stale-citation catch (62-b), caught pre-commit this time.",
+    "resolution": "runner_sha256 re-pinned to the audited on-disk bytes (1d52ad77…); the runner was audited line-by-line before re-pinning (stages baseline|draw|decide|determinism; assertPins over every input_sha256 key; arms canon-sha binding; append-only qrng-attempts.jsonl + usage.jsonl ledger with job_consumed accounting; first-seal-binds re-entry guard; registered ladder direct→prf→prf; node --check OK)."
+   },
+   {
+    "finding": "input_sha256.mines pin was STALE: pinned 12f7dc67… (slice-1-time 11-row ledger M1-M11), but fleet-seeds 2bc52a5 appended M12 (gauge before game) — the live 12-row ledger hashes 1ba9bdfa38bea7eb5e385672d0a5ab60b9288ff0314c57282048f35b361e0839. assertPins would have fail-closed at draw/decide, and slice-1's markers_n equality gate could never have survived a legitimate append-only ledger event.",
+    "resolution": "mines re-pinned to the live 12-row ledger (1ba9bdfa…) and the run-6 history gate amended to the LEDGER-EVENT AMENDMENT: committed run-6 marker-id sequence must be an append-only PREFIX of the live sequence (M1-M11 prefix, appended [M12] receipted), previously-drawn lists equal, exclusions equal, survivors byte-equal committed run-6 under the live state. The pre-amendment draft run already demonstrated the substantive fidelity (exclusions_match_committed:true, survivors_byte_equal_committed:true under the 12-marker state) — only the count-equality check failed, on a check the amendment supersedes with a strictly stronger one."
+   },
+   {
+    "finding": "input_sha256.engine_run pin was STALE: pinned 098fe0f3… (slice-1-time engine_run.mjs), but fleet-seeds 2bc52a5 edited the engine (added a pool=1 draw guard, orthogonal to the lens); the live file hashes 25423c99f7f0df27f01fb1a3b7c697d17726e3ccb4bd5f43408d79af89aeb545.",
+    "resolution": "TARGET VERIFIED INTACT before re-pinning: the live engine_run.mjs const KEYS lens was extracted and compared to this registration's pinned baseline_KEYS — 14 entries, byte-equal (VERIFIED by lane 63-d-r). The target of record is the KEYS lens (pinned here and hardcoded in the runner as KEYS_BASELINE); the upstream edit does not touch it. engine_run re-pinned to 25423c99… as provenance of the live file the pin asserts."
+   },
+   {
+    "finding": "the stale draft receipt receipts/baseline.json had been produced by the pre-amendment runner draft (validity ok:false solely on the superseded markers_n equality; baseline re-derivation itself already MATCHED the slice-1 pin: M=7.0740740740740735, totalF=15, pin_match:true under the 12-marker state).",
+    "resolution": "stale receipt preserved verbatim as receipts/baseline.pre-amendment-draft.json (NEVER delete data); the baseline stage re-run with the runner of record regenerates receipts/baseline.json — its validity verdict under the amended gate is the one of record."
+   },
+   {
+    "finding": "slice-1's draw stage chose its stream via an E6_SEAL_STREAM env override (operator choice at draw time, receipted post-hoc by the seal). This slice's runner deliberately SUPERSEDES that with the pre-registered direct→prf→prf ladder — no operator-chosen stream channel exists (registration draw_ladder field: 'No stream choice is made post-hoc — this ladder IS the registration').",
+    "resolution": "accepted as the stricter design; not a defect. The instrumentations otherwise match slice-1's (append-only attempts ledger, assertPins, canon-sha arms binding, byte-exact offline replay)."
+   }
+  ],
+  "audit_verifications_of_record": [
+   "arms.json is a byte-identical copy of slice-1's (file sha 7a0f1421… both); canon arms sha recomputed = 23eec18d31cd6b8f258fb060732c6e88d7fdbac890879632787e03318ee748b4 = slice-1's registered pin — SAME FROZEN ARMS, no re-freeze",
+   "slice-1 sealed priors.json (sha 9969fa3f…, jev-1.13.0, 2808 in / 235 out) re-verified: ok===true AND arms_sha256===23eec18d… — the REUSE choice is bound to the same frozen arm space",
+   "channel-health probe receipt byte-identical to the keeper's raw result /home/z/my-project/scripts/probe63_moth_result.json (sha256 5d2f94fc…); certification fields re-verified: health_passed=true, budget_bits=1264.68…, h_bit>0, CHSH S=2.8193359375 > classical_bound 2, extractor toeplitz, random.hex 142 bytes / 1136 bits",
+   "all other input pins pre-verified byte-exact against the live fleet-seeds checkout: run5_raw, run6_raw, catalog, run5_cands, run6_cands, run5_hist, run6_hist, witness_run1..6",
+   "baseline re-derivation under the live 12-marker ledger equals the carried slice-1 pin (M=7.0740740740740735, totalF=15) — demonstrated by the preserved pre-amendment draft receipt and re-asserted by the final baseline receipt of record"
+  ],
+  "reconciled_by": "lane 63-d-r, 2026-10-01T23:45Z window; zero external calls attributable to this slice before the registration push (moth draw happens only AFTER the push)"
+ },
+ "budget_and_abort": {
+  "wall_time": "each foreground stage < 5 min; whole slice within one session",
+  "abort_line": "external channel failure (mothquantum non-2xx, timeout, bit-budget fail-closed, or incomplete certification payload) → the registered ladder runs within the <=3-job cap; if zero certified seals exist when the ladder stops, fail-closed honest partial receipted (slice-1 precedent: a first-class result); $0 untracked spend"
+ },
+ "input_sha256": {
+  "engine_run": "25423c99f7f0df27f01fb1a3b7c697d17726e3ccb4bd5f43408d79af89aeb545",
+  "mines": "1ba9bdfa38bea7eb5e385672d0a5ab60b9288ff0314c57282048f35b361e0839",
+  "run5_raw": "60aec453e9a6f951bed47bda077d2b5be13e7a3ee3515e1e0adc18150a8d7dc1",
+  "run6_raw": "e6f6b7d3f170e8c363c8adc90668865751715a0b676fafcc2082d567896e898f",
+  "catalog": "f58b17ce53e83159b9025b7ef31dfa527399fbd2dfc204de423bb2ce2cee40cf",
+  "run5_cands": "f8a186dd2fd37db372ab62a8b3bc5dc47e8185d734b47baafc923731e56aca60",
+  "run6_cands": "d1ec121ad091aadd6d3b956c3d36bc196788683fdfef0a5bac529c10b791d904",
+  "run5_hist": "7342931bf3a4b0740eaf06b09de765b0752f1b66d7eba0d5fdd79249801e8e3a",
+  "run6_hist": "af97d5ecce2ac152651786e987656da725fe467cad9de50f7648f22a11f75697",
+  "priors_slice1": "9969fa3f69d557bf24cfc6911abe8ca7ab125868f15b67812df454b2441f13c7",
+  "health_probe": "5d2f94fc16fb0a04fca284584993eea4aa68b5c738369fa3e3852e6e23014498",
+  "witness_run1": "401510b7de02c58a46073898521dedb1b920edf47f45d015459e977c1d897535",
+  "witness_run2": "de2638727cdc473755e32915378318728d0d1fc111f65f0acd0c48d0bc3a7eb0",
+  "witness_run3": "8e298b044a1ca70508a0d519359c7b63a223b3c56139fb06be7ded1f79d29928",
+  "witness_run4": "1013fef863023ee2846ca330ac7d14c13e463192d890a8131b7374d2aa87f27b",
+  "witness_run5": "b705d32e300fd475be55f0bff39852a2078ea01292ea17f467f0614b8b56d663",
+  "witness_run6": "a8c1b49476c76e973680f33881af5344a477681940b6430e3582db7c42978ba9"
+ },
+ "runner_sha256": "1d52ad778fb7c0c033413665027e9775c01356d9d3d0d6168a2e921ec0362e82",
+ "runner": "e6_slice2.mjs (stages: baseline | draw | decide [--check] | determinism; deterministic local execution; reuses fleet-seeds/lode/engine machinery and fleet-seeds/tools/moth-seal.mjs verbatim — no reinvented channels; deltas vs slice-1's runner e6_slice1.mjs [199a020d…]: priors stage REMOVED (priors of record reused, binding-asserted), health-gate precondition added, registered direct→prf→prf draw ladder with <=3-JOB cap + append-only attempts/usage ledger, decide gains lineage/health/cap-accounting fields and reads priors from the pinned slice-1 receipt; metric/history code VERBATIM; validity code VERBATIM except the registered LEDGER-EVENT AMENDMENT in the run-6 gate (see validity_gate + draft_reconciliation))",
+ "arms_sha256": "23eec18d31cd6b8f258fb060732c6e88d7fdbac890879632787e03318ee748b4",
+ "arms_sha256_verification": "recomputed at registration time from this lane's byte-identical arms.json copy (canonical JSON of the arms array, indent 1, trailing newline): 23eec18d31cd6b8f258fb060732c6e88d7fdbac890879632787e03318ee748b4 — EQUALS slice-1's registered pin. The frozen arm space is carried, NOT re-frozen.",
+ "baseline_M": 7.0740740740740735,
+ "baseline_totalF": 15,
+ "pass_rule": "PASS iff at least one measured bundle arm A satisfies: M(A) >= 1.05 * baseline_M (= 7.427777777777777) AND totalF(A) >= baseline_totalF (= 15). PROMOTED = eligible arm with max M (arm-id lexicographic tie-break); the promoted KEYS is the baseline with that arm's substitution — a PROPOSAL artifact, adoption is the lode keeper's next act.",
+ "pass_margin_relative": 0.05,
+ "prior_e6_slices": 1,
+ "prior_e6_slices_note": "slice-1 exists and consumed its channel cap WITHOUT measuring any arm — it counts toward the anneal clock t (honest accounting); B = ceil(3 * 0.7^1) = ceil(2.1) = 3, so the bundle budget is UNCHANGED at 3."
+}

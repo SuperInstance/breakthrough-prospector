@@ -1,0 +1,33 @@
+{
+ "kind": "e6-slice-1-arms",
+ "frozen_note": "The machine-proposed mutation space of record. Frozen BEFORE the priors call, the QRNG draw, and any arm measurement. Each arm is a single-keyword substitution in the lode engine's scout→extract KEYS lens (engine_run.mjs const KEYS, 14 entries). The runner hashes THIS arms array (canonical JSON, indent 1, trailing newline) into arms_sha256; registration.json pins that hash.",
+ "slot_recipe": "Score each of the 14 baseline KEYS entries by CATALOG-corpus attestation (count of the 248 awesome-rsi catalog items whose JSON blob contains the key). Slots = the 4 lowest-attestation entries; ties broken by KEYS order (earlier first). Computed from receipts/baseline.json attestation (committed pre-registration): outer loop 0 (KEYS idx 5), reward-hacking 0 (idx 7), reward hacking 1 (idx 6), playbook 1 (idx 9) — map-elites (1, idx 12) loses the tie-break. Baseline-only diagnostics: no arm was measured pre-registration.",
+ "pool_recipe": "Pool terms = the first 8 DISTINCT leaf ('###') section-heading vocabulary terms of the committed catalog receipt (run-6 review-c1-awesome-rsi-raw.md), in catalog appearance order, not covered by any baseline key, normalized to the engine's lowercase-substring key form. Headings cited per term below.",
+ "pairing_rule": "Pool terms dealt to slots in slot order, two terms per slot: T1,T2→slot1; T3,T4→slot2; T5,T6→slot3; T7,T8→slot4.",
+ "pool": [
+  {"term": "self-train", "heading": "### Self-Training & Self-Reward", "catalog_line": 94},
+  {"term": "self-distill", "heading": "### Synthetic Data & Self-Distillation", "catalog_line": 101},
+  {"term": "self-play", "heading": "### Self-Play & Iterative Fine-tuning", "catalog_line": 109},
+  {"term": "self-taught", "heading": "### Self-Taught Reasoning", "catalog_line": 121},
+  {"term": "prompt", "heading": "### Prompt & Program Optimization", "catalog_line": 131},
+  {"term": "memory", "heading": "### Context & Memory Evolution", "catalog_line": 141},
+  {"term": "scaffold", "heading": "### Harness & Scaffold Evolution", "catalog_line": 152},
+  {"term": "substrate", "heading": "### Extensible Harness Substrates", "catalog_line": 163}
+ ],
+ "slots": [
+  {"slot": 1, "key": "outer loop", "catalog_attest": 0, "run5_attest": 0, "run6_attest": 0},
+  {"slot": 2, "key": "reward-hacking", "catalog_attest": 0, "run5_attest": 1, "run6_attest": 1},
+  {"slot": 3, "key": "reward hacking", "catalog_attest": 1, "run5_attest": 1, "run6_attest": 1},
+  {"slot": 4, "key": "playbook", "catalog_attest": 1, "run5_attest": 1, "run6_attest": 1}
+ ],
+ "arms": [
+  {"id": "A1", "index": 1, "old_key": "outer loop", "new_key": "self-train", "note": "loop-vocabulary slot tried on model-level self-training vocabulary (Self-Training & Self-Reward)"},
+  {"id": "A2", "index": 2, "old_key": "outer loop", "new_key": "self-distill", "note": "loop-vocabulary slot tried on synthetic-data/self-distillation vocabulary"},
+  {"id": "A3", "index": 3, "old_key": "reward-hacking", "new_key": "self-play", "note": "duplicate-spelling slot (with 'reward hacking') tried on self-play fine-tuning vocabulary"},
+  {"id": "A4", "index": 4, "old_key": "reward-hacking", "new_key": "self-taught", "note": "duplicate-spelling slot tried on self-taught-reasoner vocabulary"},
+  {"id": "A5", "index": 5, "old_key": "reward hacking", "new_key": "prompt", "note": "safety-side slot tried on prompt/program-optimization vocabulary (harness-side, C02)"},
+  {"id": "A6", "index": 6, "old_key": "reward hacking", "new_key": "memory", "note": "safety-side slot tried on context/memory-evolution vocabulary (harness-side, C02)"},
+  {"id": "A7", "index": 7, "old_key": "playbook", "new_key": "scaffold", "note": "procedural slot tried on harness/scaffold-evolution vocabulary (C02 core term)"},
+  {"id": "A8", "index": 8, "old_key": "playbook", "new_key": "substrate", "note": "procedural slot tried on extensible-harness-substrate vocabulary (C02 substrates)"}
+ ]
+}

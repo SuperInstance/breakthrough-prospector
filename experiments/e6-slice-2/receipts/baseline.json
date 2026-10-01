@@ -1,0 +1,200 @@
+{
+ "kind": "e6-slice-2-baseline",
+ "ts_utc": "2026-10-01T23:47:15.876Z",
+ "stage_note": "pre-registration diagnostics ONLY: validity gates + baseline pin re-derivation against the slice-1 pin. No arms measured, no external spend. The arms space of record is slice-1's frozen arms.json (byte-identical copy in this lane; canon sha pinned in registration.json).",
+ "corpora": {
+  "run5-scout": {
+   "file": "/home/z/my-project/fleet-seeds/lode/engine/receipts/2026-09-29-engine-run-5/scout/raw.json",
+   "sha256": "60aec453e9a6f951bed47bda077d2b5be13e7a3ee3515e1e0adc18150a8d7dc1",
+   "items": 96
+  },
+  "run6-scout": {
+   "file": "/home/z/my-project/fleet-seeds/lode/engine/receipts/2026-09-29-engine-run-6/scout/raw.json",
+   "sha256": "e6f6b7d3f170e8c363c8adc90668865751715a0b676fafcc2082d567896e898f",
+   "items": 96
+  },
+  "awesome-rsi-catalog": {
+   "file": "/home/z/my-project/fleet-seeds/lode/engine/receipts/2026-09-29-engine-run-6/review-c1-awesome-rsi-raw.md",
+   "sha256": "f58b17ce53e83159b9025b7ef31dfa527399fbd2dfc204de423bb2ce2cee40cf",
+   "items": 248
+  }
+ },
+ "validity": {
+  "ok": true,
+  "run6": {
+   "history_state_matches_committed": true,
+   "history_ledger_append_only_prefix": true,
+   "history_ledger_committed_rows": 11,
+   "history_ledger_live_rows": 12,
+   "history_ledger_appended_marker_ids": [
+    "M12"
+   ],
+   "exclusions_match_committed": true,
+   "survivors_byte_equal_committed": true,
+   "derived": {
+    "markers_n": 12,
+    "previously_drawn": [
+     "2026-09-29-engine-run-1:c7",
+     "2026-09-29-engine-run-2:c1",
+     "2026-09-29-engine-run-4:c4",
+     "2026-09-29-engine-run-5:c3"
+    ]
+   }
+  },
+  "run5": {
+   "history_prevdrawn_matches_committed": true,
+   "exclusion_delta_is_exactly_receipted_fix": true,
+   "survivors_equal_committed_minus_receipted_delta": true,
+   "extra_exclusions": [
+    {
+     "id": "c17",
+     "title": "Audit the Scaffold, Not the Checkpoint: A Stationarity Dichotomy for Recursive Self-Improvement in Agentic Coding",
+     "source": "arxiv",
+     "ref": "http://arxiv.org/abs/2609.34924v1",
+     "matched": "M11"
+    },
+    {
+     "id": "c2",
+     "title": "Recursive self-improvement of AI research agents",
+     "source": "hn-algolia",
+     "ref": "https://arxiv.org/abs/2609.26457",
+     "matched": "M3"
+    }
+   ]
+  },
+  "notes": []
+ },
+ "baseline": {
+  "M": 7.0740740740740735,
+  "totalF": 15,
+  "per_corpus": [
+   {
+    "corpus": "run5-scout",
+    "mu": 2,
+    "f": 3,
+    "pool": 35,
+    "pre": 9,
+    "excluded": 6,
+    "survivors": [
+     {
+      "id": "c1",
+      "key_score": 2,
+      "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+      "ref": "https://arxiv.org/abs/2609.17523"
+     },
+     {
+      "id": "c2",
+      "key_score": 2,
+      "title": "Recursive Self Improvement for Coding Agents",
+      "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+     },
+     {
+      "id": "c3",
+      "key_score": 2,
+      "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+      "ref": "https://github.com/undefined"
+     }
+    ]
+   },
+   {
+    "corpus": "run6-scout",
+    "mu": 2,
+    "f": 3,
+    "pool": 35,
+    "pre": 9,
+    "excluded": 6,
+    "survivors": [
+     {
+      "id": "c1",
+      "key_score": 2,
+      "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+      "ref": "https://arxiv.org/abs/2609.17523"
+     },
+     {
+      "id": "c2",
+      "key_score": 2,
+      "title": "Recursive Self Improvement for Coding Agents",
+      "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+     },
+     {
+      "id": "c3",
+      "key_score": 2,
+      "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+      "ref": "https://github.com/undefined"
+     }
+    ]
+   },
+   {
+    "corpus": "awesome-rsi-catalog",
+    "mu": 2.2222222222222223,
+    "f": 9,
+    "pool": 33,
+    "pre": 9,
+    "excluded": 0,
+    "survivors": [
+     {
+      "id": "c1",
+      "key_score": 3,
+      "title": "Harness Engineering for Self-Improvement",
+      "ref": "https://lilianweng.github.io/posts/2026-07-04-harness/"
+     },
+     {
+      "id": "c2",
+      "key_score": 3,
+      "title": "ICLR 2026 Workshop on AI with Recursive Self-Improvement",
+      "ref": "https://iclr.cc/virtual/2026/workshop/10000796"
+     },
+     {
+      "id": "c3",
+      "key_score": 2,
+      "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
+      "ref": "https://arxiv.org/abs/2607.07663"
+     },
+     {
+      "id": "c4",
+      "key_score": 2,
+      "title": "A Formulation of Recursive Self-Improvement and Its Possible Efficiency",
+      "ref": "https://arxiv.org/abs/1805.06610"
+     },
+     {
+      "id": "c5",
+      "key_score": 2,
+      "title": "From Seed AI to Technological Singularity via Recursively Self-Improving Software",
+      "ref": "https://arxiv.org/abs/1502.06512"
+     },
+     {
+      "id": "c6",
+      "key_score": 2,
+      "title": "Self-Improvement in Language Models: The Sharpening Mechanism",
+      "ref": "https://arxiv.org/abs/2412.01951"
+     },
+     {
+      "id": "c7",
+      "key_score": 2,
+      "title": "Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation",
+      "ref": "https://arxiv.org/abs/2310.02304"
+     },
+     {
+      "id": "c8",
+      "key_score": 2,
+      "title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+      "ref": "https://arxiv.org/abs/2510.04618"
+     },
+     {
+      "id": "c9",
+      "key_score": 2,
+      "title": "Continual Harness: Online Adaptation for Self-Improving Foundation Agents",
+      "ref": "https://arxiv.org/abs/2605.09998"
+     }
+    ]
+   }
+  ]
+ },
+ "baseline_M": 7.0740740740740735,
+ "baseline_totalF": 15,
+ "slice1_baseline_pin": {
+  "M": 7.0740740740740735,
+  "totalF": 15,
+  "pin_match": true
+ }
+}
