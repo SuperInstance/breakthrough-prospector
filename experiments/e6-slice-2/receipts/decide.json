@@ -1,0 +1,744 @@
+{
+ "kind": "e6-slice-2-decide",
+ "ts_utc": "2026-10-01T23:51:43.626Z",
+ "check": false,
+ "verdict": "FAIL",
+ "lineage": "slice-2 re-registration of slice-1 (HONEST-PARTIAL qrng-channel-degraded) on the recovered channel — same frozen arms (23eec18d…), same pinned baseline, same metric/margins",
+ "validity": {
+  "ok": true,
+  "run6": {
+   "history_state_matches_committed": true,
+   "history_ledger_append_only_prefix": true,
+   "history_ledger_committed_rows": 11,
+   "history_ledger_live_rows": 12,
+   "history_ledger_appended_marker_ids": [
+    "M12"
+   ],
+   "exclusions_match_committed": true,
+   "survivors_byte_equal_committed": true,
+   "derived": {
+    "markers_n": 12,
+    "previously_drawn": [
+     "2026-09-29-engine-run-1:c7",
+     "2026-09-29-engine-run-2:c1",
+     "2026-09-29-engine-run-4:c4",
+     "2026-09-29-engine-run-5:c3"
+    ]
+   }
+  },
+  "run5": {
+   "history_prevdrawn_matches_committed": true,
+   "exclusion_delta_is_exactly_receipted_fix": true,
+   "survivors_equal_committed_minus_receipted_delta": true,
+   "extra_exclusions": [
+    {
+     "id": "c17",
+     "title": "Audit the Scaffold, Not the Checkpoint: A Stationarity Dichotomy for Recursive Self-Improvement in Agentic Coding",
+     "source": "arxiv",
+     "ref": "http://arxiv.org/abs/2609.34924v1",
+     "matched": "M11"
+    },
+    {
+     "id": "c2",
+     "title": "Recursive self-improvement of AI research agents",
+     "source": "hn-algolia",
+     "ref": "https://arxiv.org/abs/2609.26457",
+     "matched": "M3"
+    }
+   ]
+  },
+  "notes": []
+ },
+ "baseline": {
+  "M": 7.0740740740740735,
+  "totalF": 15,
+  "pin_ok": true,
+  "per_corpus": [
+   {
+    "corpus": "run5-scout",
+    "mu": 2,
+    "f": 3,
+    "pool": 35,
+    "pre": 9,
+    "excluded": 6,
+    "survivors": [
+     {
+      "id": "c1",
+      "key_score": 2,
+      "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+      "ref": "https://arxiv.org/abs/2609.17523"
+     },
+     {
+      "id": "c2",
+      "key_score": 2,
+      "title": "Recursive Self Improvement for Coding Agents",
+      "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+     },
+     {
+      "id": "c3",
+      "key_score": 2,
+      "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+      "ref": "https://github.com/undefined"
+     }
+    ]
+   },
+   {
+    "corpus": "run6-scout",
+    "mu": 2,
+    "f": 3,
+    "pool": 35,
+    "pre": 9,
+    "excluded": 6,
+    "survivors": [
+     {
+      "id": "c1",
+      "key_score": 2,
+      "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+      "ref": "https://arxiv.org/abs/2609.17523"
+     },
+     {
+      "id": "c2",
+      "key_score": 2,
+      "title": "Recursive Self Improvement for Coding Agents",
+      "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+     },
+     {
+      "id": "c3",
+      "key_score": 2,
+      "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+      "ref": "https://github.com/undefined"
+     }
+    ]
+   },
+   {
+    "corpus": "awesome-rsi-catalog",
+    "mu": 2.2222222222222223,
+    "f": 9,
+    "pool": 33,
+    "pre": 9,
+    "excluded": 0,
+    "survivors": [
+     {
+      "id": "c1",
+      "key_score": 3,
+      "title": "Harness Engineering for Self-Improvement",
+      "ref": "https://lilianweng.github.io/posts/2026-07-04-harness/"
+     },
+     {
+      "id": "c2",
+      "key_score": 3,
+      "title": "ICLR 2026 Workshop on AI with Recursive Self-Improvement",
+      "ref": "https://iclr.cc/virtual/2026/workshop/10000796"
+     },
+     {
+      "id": "c3",
+      "key_score": 2,
+      "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
+      "ref": "https://arxiv.org/abs/2607.07663"
+     },
+     {
+      "id": "c4",
+      "key_score": 2,
+      "title": "A Formulation of Recursive Self-Improvement and Its Possible Efficiency",
+      "ref": "https://arxiv.org/abs/1805.06610"
+     },
+     {
+      "id": "c5",
+      "key_score": 2,
+      "title": "From Seed AI to Technological Singularity via Recursively Self-Improving Software",
+      "ref": "https://arxiv.org/abs/1502.06512"
+     },
+     {
+      "id": "c6",
+      "key_score": 2,
+      "title": "Self-Improvement in Language Models: The Sharpening Mechanism",
+      "ref": "https://arxiv.org/abs/2412.01951"
+     },
+     {
+      "id": "c7",
+      "key_score": 2,
+      "title": "Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation",
+      "ref": "https://arxiv.org/abs/2310.02304"
+     },
+     {
+      "id": "c8",
+      "key_score": 2,
+      "title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+      "ref": "https://arxiv.org/abs/2510.04618"
+     },
+     {
+      "id": "c9",
+      "key_score": 2,
+      "title": "Continual Harness: Online Adaptation for Self-Improving Foundation Agents",
+      "ref": "https://arxiv.org/abs/2605.09998"
+     }
+    ]
+   }
+  ]
+ },
+ "health_precondition": {
+  "ok": true,
+  "receipt": "receipts/channel-health-probe-w63.json",
+  "summary": {
+   "health_passed": true,
+   "budget_bits": 1264.6849661751767,
+   "h_bit": 0.9056545380881841,
+   "bell_S": 2.8193359375,
+   "classical_bound": 2,
+   "delivered_bytes": 142,
+   "delivered_bits": 1136,
+   "requested_bytes": 512
+  }
+ },
+ "priors": {
+  "source": "slice-1 sealed priors.json (reused by registration, sha-pinned)",
+  "binding_ok": true,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2808,
+   "output_tokens": 235
+  },
+  "fresh_calls_this_slice": 0,
+  "answers_note": "reflective priors only — the certified QRNG lead picks what gets measured"
+ },
+ "budget": {
+  "B0": 3,
+  "ANNEAL": 0.7,
+  "t": 1,
+  "B": 3,
+  "law": "M4/M10: budget cap as selection pressure — only bundle arms measured; unmeasured arms stay frozen (receipted, never peeked)"
+ },
+ "bundle": {
+  "lead": "A5",
+  "lead_rule": "certified comet-qrng-v1 draw (anti-cherry-pick; FIRST CERTIFIED SEAL BINDS)",
+  "fills": [
+   "A3",
+   "A4"
+  ],
+  "fill_rule": "deterministic descending noul prior (slice-1 sealed priors), index tie-break",
+  "measured_arm_ids": [
+   "A5",
+   "A3",
+   "A4"
+  ],
+  "frozen_unmeasured_arm_ids": [
+   "A1",
+   "A2",
+   "A6",
+   "A7",
+   "A8"
+  ]
+ },
+ "seal": {
+  "jobId": "d5a55554-311e-4607-a5b1-79aedf8e8cb9",
+  "stream": "direct",
+  "attempt_no": 1,
+  "certifiedBits": {
+   "deliveredBytes": 150,
+   "bits": 1200,
+   "hBit": 0.907002318721403,
+   "effectiveEntropyBits": 112,
+   "streamKind": "certified-direct",
+   "consumedBits": 112,
+   "requiredBits": 112
+  },
+  "raw_result_sha256": "a9e8326d8882843101392ace5789518eb907c9645a0667558791cbf2e9166ae1"
+ },
+ "measured": [
+  {
+   "id": "A3",
+   "old_key": "reward-hacking",
+   "new_key": "self-play",
+   "lead": false,
+   "role": "noul-fill",
+   "noul": 0.18,
+   "M": 7.0740740740740735,
+   "totalF": 15,
+   "per_corpus": [
+    {
+     "corpus": "run5-scout",
+     "mu": 2,
+     "f": 3,
+     "pool": 34,
+     "pre": 9,
+     "excluded": 6,
+     "survivors": [
+      {
+       "id": "c1",
+       "key_score": 2,
+       "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+       "ref": "https://arxiv.org/abs/2609.17523"
+      },
+      {
+       "id": "c2",
+       "key_score": 2,
+       "title": "Recursive Self Improvement for Coding Agents",
+       "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+      },
+      {
+       "id": "c3",
+       "key_score": 2,
+       "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+       "ref": "https://github.com/undefined"
+      }
+     ]
+    },
+    {
+     "corpus": "run6-scout",
+     "mu": 2,
+     "f": 3,
+     "pool": 34,
+     "pre": 9,
+     "excluded": 6,
+     "survivors": [
+      {
+       "id": "c1",
+       "key_score": 2,
+       "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+       "ref": "https://arxiv.org/abs/2609.17523"
+      },
+      {
+       "id": "c2",
+       "key_score": 2,
+       "title": "Recursive Self Improvement for Coding Agents",
+       "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+      },
+      {
+       "id": "c3",
+       "key_score": 2,
+       "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+       "ref": "https://github.com/undefined"
+      }
+     ]
+    },
+    {
+     "corpus": "awesome-rsi-catalog",
+     "mu": 2.2222222222222223,
+     "f": 9,
+     "pool": 33,
+     "pre": 9,
+     "excluded": 0,
+     "survivors": [
+      {
+       "id": "c1",
+       "key_score": 3,
+       "title": "Harness Engineering for Self-Improvement",
+       "ref": "https://lilianweng.github.io/posts/2026-07-04-harness/"
+      },
+      {
+       "id": "c2",
+       "key_score": 3,
+       "title": "ICLR 2026 Workshop on AI with Recursive Self-Improvement",
+       "ref": "https://iclr.cc/virtual/2026/workshop/10000796"
+      },
+      {
+       "id": "c3",
+       "key_score": 2,
+       "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
+       "ref": "https://arxiv.org/abs/2607.07663"
+      },
+      {
+       "id": "c4",
+       "key_score": 2,
+       "title": "A Formulation of Recursive Self-Improvement and Its Possible Efficiency",
+       "ref": "https://arxiv.org/abs/1805.06610"
+      },
+      {
+       "id": "c5",
+       "key_score": 2,
+       "title": "From Seed AI to Technological Singularity via Recursively Self-Improving Software",
+       "ref": "https://arxiv.org/abs/1502.06512"
+      },
+      {
+       "id": "c6",
+       "key_score": 2,
+       "title": "Self-Improvement in Language Models: The Sharpening Mechanism",
+       "ref": "https://arxiv.org/abs/2412.01951"
+      },
+      {
+       "id": "c7",
+       "key_score": 2,
+       "title": "Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation",
+       "ref": "https://arxiv.org/abs/2310.02304"
+      },
+      {
+       "id": "c8",
+       "key_score": 2,
+       "title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+       "ref": "https://arxiv.org/abs/2510.04618"
+      },
+      {
+       "id": "c9",
+       "key_score": 2,
+       "title": "Continual Harness: Online Adaptation for Self-Improving Foundation Agents",
+       "ref": "https://arxiv.org/abs/2605.09998"
+      }
+     ]
+    }
+   ],
+   "KEYS": [
+    "self-improv",
+    "self-evolv",
+    "recursive",
+    "meta-learn",
+    "harness",
+    "outer loop",
+    "reward hacking",
+    "self-play",
+    "verifier",
+    "playbook",
+    "skill librar",
+    "curriculum",
+    "map-elites",
+    "archive"
+   ]
+  },
+  {
+   "id": "A4",
+   "old_key": "reward-hacking",
+   "new_key": "self-taught",
+   "lead": false,
+   "role": "noul-fill",
+   "noul": 0.18,
+   "M": 7.111111111111112,
+   "totalF": 15,
+   "per_corpus": [
+    {
+     "corpus": "run5-scout",
+     "mu": 2,
+     "f": 3,
+     "pool": 34,
+     "pre": 9,
+     "excluded": 6,
+     "survivors": [
+      {
+       "id": "c1",
+       "key_score": 2,
+       "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+       "ref": "https://arxiv.org/abs/2609.17523"
+      },
+      {
+       "id": "c2",
+       "key_score": 2,
+       "title": "Recursive Self Improvement for Coding Agents",
+       "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+      },
+      {
+       "id": "c3",
+       "key_score": 2,
+       "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+       "ref": "https://github.com/undefined"
+      }
+     ]
+    },
+    {
+     "corpus": "run6-scout",
+     "mu": 2,
+     "f": 3,
+     "pool": 34,
+     "pre": 9,
+     "excluded": 6,
+     "survivors": [
+      {
+       "id": "c1",
+       "key_score": 2,
+       "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+       "ref": "https://arxiv.org/abs/2609.17523"
+      },
+      {
+       "id": "c2",
+       "key_score": 2,
+       "title": "Recursive Self Improvement for Coding Agents",
+       "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+      },
+      {
+       "id": "c3",
+       "key_score": 2,
+       "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+       "ref": "https://github.com/undefined"
+      }
+     ]
+    },
+    {
+     "corpus": "awesome-rsi-catalog",
+     "mu": 2.3333333333333335,
+     "f": 9,
+     "pool": 33,
+     "pre": 9,
+     "excluded": 0,
+     "survivors": [
+      {
+       "id": "c1",
+       "key_score": 3,
+       "title": "Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation",
+       "ref": "https://arxiv.org/abs/2310.02304"
+      },
+      {
+       "id": "c2",
+       "key_score": 3,
+       "title": "Harness Engineering for Self-Improvement",
+       "ref": "https://lilianweng.github.io/posts/2026-07-04-harness/"
+      },
+      {
+       "id": "c3",
+       "key_score": 3,
+       "title": "ICLR 2026 Workshop on AI with Recursive Self-Improvement",
+       "ref": "https://iclr.cc/virtual/2026/workshop/10000796"
+      },
+      {
+       "id": "c4",
+       "key_score": 2,
+       "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
+       "ref": "https://arxiv.org/abs/2607.07663"
+      },
+      {
+       "id": "c5",
+       "key_score": 2,
+       "title": "A Formulation of Recursive Self-Improvement and Its Possible Efficiency",
+       "ref": "https://arxiv.org/abs/1805.06610"
+      },
+      {
+       "id": "c6",
+       "key_score": 2,
+       "title": "From Seed AI to Technological Singularity via Recursively Self-Improving Software",
+       "ref": "https://arxiv.org/abs/1502.06512"
+      },
+      {
+       "id": "c7",
+       "key_score": 2,
+       "title": "Self-Improvement in Language Models: The Sharpening Mechanism",
+       "ref": "https://arxiv.org/abs/2412.01951"
+      },
+      {
+       "id": "c8",
+       "key_score": 2,
+       "title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+       "ref": "https://arxiv.org/abs/2510.04618"
+      },
+      {
+       "id": "c9",
+       "key_score": 2,
+       "title": "Continual Harness: Online Adaptation for Self-Improving Foundation Agents",
+       "ref": "https://arxiv.org/abs/2605.09998"
+      }
+     ]
+    }
+   ],
+   "KEYS": [
+    "self-improv",
+    "self-evolv",
+    "recursive",
+    "meta-learn",
+    "harness",
+    "outer loop",
+    "reward hacking",
+    "self-taught",
+    "verifier",
+    "playbook",
+    "skill librar",
+    "curriculum",
+    "map-elites",
+    "archive"
+   ]
+  },
+  {
+   "id": "A5",
+   "old_key": "reward hacking",
+   "new_key": "prompt",
+   "lead": true,
+   "role": "qrng-lead",
+   "noul": 0.18,
+   "M": 7.148148148148148,
+   "totalF": 15,
+   "per_corpus": [
+    {
+     "corpus": "run5-scout",
+     "mu": 2,
+     "f": 3,
+     "pool": 34,
+     "pre": 9,
+     "excluded": 6,
+     "survivors": [
+      {
+       "id": "c1",
+       "key_score": 2,
+       "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+       "ref": "https://arxiv.org/abs/2609.17523"
+      },
+      {
+       "id": "c2",
+       "key_score": 2,
+       "title": "Recursive Self Improvement for Coding Agents",
+       "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+      },
+      {
+       "id": "c3",
+       "key_score": 2,
+       "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+       "ref": "https://github.com/undefined"
+      }
+     ]
+    },
+    {
+     "corpus": "run6-scout",
+     "mu": 2,
+     "f": 3,
+     "pool": 34,
+     "pre": 9,
+     "excluded": 6,
+     "survivors": [
+      {
+       "id": "c1",
+       "key_score": 2,
+       "title": "Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+       "ref": "https://arxiv.org/abs/2609.17523"
+      },
+      {
+       "id": "c2",
+       "key_score": 2,
+       "title": "Recursive Self Improvement for Coding Agents",
+       "ref": "https://cline.ghost.io/recursive-self-improvement-for-coding-agents/"
+      },
+      {
+       "id": "c3",
+       "key_score": 2,
+       "title": "Ask HN: Has anyone achieved recursive self-improvement with agentic tools?",
+       "ref": "https://github.com/undefined"
+      }
+     ]
+    },
+    {
+     "corpus": "awesome-rsi-catalog",
+     "mu": 2.4444444444444446,
+     "f": 9,
+     "pool": 37,
+     "pre": 9,
+     "excluded": 0,
+     "survivors": [
+      {
+       "id": "c1",
+       "key_score": 3,
+       "title": "Continual Harness: Online Adaptation for Self-Improving Foundation Agents",
+       "ref": "https://arxiv.org/abs/2605.09998"
+      },
+      {
+       "id": "c2",
+       "key_score": 3,
+       "title": "Voyager",
+       "ref": "https://github.com/MineDojo/Voyager"
+      },
+      {
+       "id": "c3",
+       "key_score": 3,
+       "title": "Harness Engineering for Self-Improvement",
+       "ref": "https://lilianweng.github.io/posts/2026-07-04-harness/"
+      },
+      {
+       "id": "c4",
+       "key_score": 3,
+       "title": "ICLR 2026 Workshop on AI with Recursive Self-Improvement",
+       "ref": "https://iclr.cc/virtual/2026/workshop/10000796"
+      },
+      {
+       "id": "c5",
+       "key_score": 2,
+       "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
+       "ref": "https://arxiv.org/abs/2607.07663"
+      },
+      {
+       "id": "c6",
+       "key_score": 2,
+       "title": "A Formulation of Recursive Self-Improvement and Its Possible Efficiency",
+       "ref": "https://arxiv.org/abs/1805.06610"
+      },
+      {
+       "id": "c7",
+       "key_score": 2,
+       "title": "From Seed AI to Technological Singularity via Recursively Self-Improving Software",
+       "ref": "https://arxiv.org/abs/1502.06512"
+      },
+      {
+       "id": "c8",
+       "key_score": 2,
+       "title": "Self-Improvement in Language Models: The Sharpening Mechanism",
+       "ref": "https://arxiv.org/abs/2412.01951"
+      },
+      {
+       "id": "c9",
+       "key_score": 2,
+       "title": "Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution",
+       "ref": "https://arxiv.org/abs/2309.16797"
+      }
+     ]
+    }
+   ],
+   "KEYS": [
+    "self-improv",
+    "self-evolv",
+    "recursive",
+    "meta-learn",
+    "harness",
+    "outer loop",
+    "prompt",
+    "reward-hacking",
+    "verifier",
+    "playbook",
+    "skill librar",
+    "curriculum",
+    "map-elites",
+    "archive"
+   ]
+  }
+ ],
+ "pass_rule": "PASS iff at least one measured bundle arm A satisfies: M(A) >= 1.05 * baseline_M (= 7.427777777777777) AND totalF(A) >= baseline_totalF (= 15). PROMOTED = eligible arm with max M (arm-id lexicographic tie-break); the promoted KEYS is the baseline with that arm's substitution — a PROPOSAL artifact, adoption is the lode keeper's next act.",
+ "pass_margin_relative": 0.05,
+ "gate": {
+  "threshold_M": 7.427777777777777,
+  "threshold_note": "registered gate: M >= (1 + pass_margin_relative) x baseline_M = 1.05 x 7.0740740740740735 = 7.427777777777777, AND totalF >= 15 (repair #2 implements the sealed registration exactly; the inherited 0.05x-threshold line that produced the voided false PASS is receipted in repair_receipt)",
+  "mutation_space_inert": true,
+  "inert_rule": "no measured arm moved M beyond the registered margin AND every measured arm kept totalF unchanged"
+ },
+ "repair_receipt": {
+  "repair": "#2 (post-draw, verdict-application only — zero measurement change)",
+  "defect": "inherited slice-1 line computed M >= pass_margin_relative * baseline_M (0.05x), contradicting the registered gate M >= 1.05 * baseline_M; it fired on this run and issued a FALSE PASS (verdict PASS, promoted A5 'reward hacking'->'prompt', cost rule PAID) — VOID of record",
+  "voided_receipt": "receipts/decide.buggy-gate-draft.json (sha256 c224c6e41b06e2bc1c5d83431db20a8d9dc5b381c1e21bb8061f1a94346930a9, preserved verbatim — never deleted)",
+  "binding_contract": "registration.json pass_rule (sealed pre-draw at e3f003f): PASS iff M(A) >= 1.05 * baseline_M (= 7.427777777777777) AND totalF(A) >= baseline_totalF (= 15)",
+  "cross_lane_note": "the same defective line exists in slice-1's e6_slice1.mjs decide stage (never exercised there: slice-1 fail-closed HONEST-PARTIAL before any measurement); any future slice copying it must use this repair",
+  "measurement_invariance": "M/totalF per arm are deterministic functions of corpus x KEYS x history — identical in the voided and repaired receipts (byte-comparable per-arm tables)"
+ },
+ "promoted": null,
+ "cap_accounting": {
+  "law": "moth cap registered in JOBS (wave-62 lesson)",
+  "jobs_consumed": 1,
+  "jobs_max": 3,
+  "seals_issued": 1
+ },
+ "cost_rule": {
+  "law": "M10 (arXiv:2609.24972): added inference cost must be paid by measured gain",
+  "spend": [
+   "0 typesafe calls (priors of record reused — registered choice)",
+   "1 mothquantum comet job(s) consumed, 1 certified seal(s) issued"
+  ],
+  "paid": "NOT_PAID"
+ },
+ "annex_descriptive": {
+  "note": "n=3, non-binding, multiple-comparisons caveat: the full per-arm table over the measured bundle only",
+  "pairs": [
+   {
+    "id": "A3",
+    "noul": 0.18,
+    "M": 7.0740740740740735
+   },
+   {
+    "id": "A4",
+    "noul": 0.18,
+    "M": 7.111111111111112
+   },
+   {
+    "id": "A5",
+    "noul": 0.18,
+    "M": 7.148148148148148
+   }
+  ]
+ }
+}

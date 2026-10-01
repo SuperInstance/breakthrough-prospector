@@ -527,9 +527,27 @@ if (stage === 'decide') {
     const m = metric(corpora, KEYS, hist);
     measured.push({ id: a.id, old_key: a.old_key, new_key: a.new_key, lead: a.id === lead, role: a.id === lead ? 'qrng-lead' : 'noul-fill', noul: noul(a.id), M: m.M, totalF: m.totalF, per_corpus: m.per_corpus, KEYS });
   }
-  const pass = measured.some((m) => m.M >= reg.pass_margin_relative * reg.baseline_M && m.totalF >= reg.baseline_totalF);
-  const eligible = measured.filter((m) => m.M >= reg.pass_margin_relative * reg.baseline_M && m.totalF >= reg.baseline_totalF);
+  // REGISTERED GATE (post-draw repair #2, receipted — measurement unchanged):
+  // the sealed registration binds: PASS iff M(A) >= 1.05 x baseline_M AND
+  // totalF(A) >= baseline_totalF. The line inherited from slice-1 computed
+  // m.M >= pass_margin_relative * baseline_M (missing the "1 + ") — a 0.05x
+  // threshold instead of the registered 1.05x. It fired on this very run and
+  // produced a FALSE PASS (promoting A5, cost rule PAID) — the defective
+  // receipt is preserved verbatim at receipts/decide.buggy-gate-draft.json
+  // (sha256 c224c6e41b06e2bc1c5d83431db20a8d9dc5b381c1e21bb8061f1a94346930a9).
+  // The repair restores EXACTLY the registered threshold (no threshold
+  // surgery: 1.05 x 7.0740740740740735 = 7.427777777777777); the M/totalF
+  // measurements themselves are untouched deterministic replays.
+  const gateThreshold = (1 + reg.pass_margin_relative) * reg.baseline_M;
+  const gateOk = (m) => m.M >= gateThreshold && m.totalF >= reg.baseline_totalF;
+  const pass = measured.some(gateOk);
+  const eligible = measured.filter(gateOk);
   const promoted = pass ? [...eligible].sort((a, b) => (b.M - a.M) || (a.id < b.id ? -1 : 1))[0] : null;
+  // Registered boring branch: if the gate fails only because every measured
+  // arm is metric-inert (M within the margin of baseline AND totalF unchanged),
+  // the FAIL verdict records mutation_space_inert: true.
+  const metricInert = (m) => Math.abs(m.M - reg.baseline_M) <= reg.pass_margin_relative * reg.baseline_M && m.totalF === reg.baseline_totalF;
+  const mutationSpaceInert = !pass && measured.length > 0 && measured.every(metricInert);
   // descriptive annex ONLY (n=3, non-binding): rank agreement between noul prior and M.
   const spearmanPairs = measured.map((m) => ({ id: m.id, noul: m.noul, M: m.M })).sort((a, b) => a.noul - b.noul);
   const receipt = {
@@ -543,6 +561,15 @@ if (stage === 'decide') {
     bundle: { lead, lead_rule: 'certified comet-qrng-v1 draw (anti-cherry-pick; FIRST CERTIFIED SEAL BINDS)', fills, fill_rule: 'deterministic descending noul prior (slice-1 sealed priors), index tie-break', measured_arm_ids: bundle, frozen_unmeasured_arm_ids: arms.arms.map((a) => a.id).filter((id) => !bundle.includes(id)) },
     seal: { jobId: witness.job?.jobId ?? null, stream: witness.stream, attempt_no: witness.attempt_no, certifiedBits: witness.certifiedBits, raw_result_sha256: witness.raw_result_sha256 },
     measured, pass_rule: reg.pass_rule, pass_margin_relative: reg.pass_margin_relative,
+    gate: { threshold_M: gateThreshold, threshold_note: 'registered gate: M >= (1 + pass_margin_relative) x baseline_M = 1.05 x 7.0740740740740735 = 7.427777777777777, AND totalF >= 15 (repair #2 implements the sealed registration exactly; the inherited 0.05x-threshold line that produced the voided false PASS is receipted in repair_receipt)', mutation_space_inert: mutationSpaceInert, inert_rule: 'no measured arm moved M beyond the registered margin AND every measured arm kept totalF unchanged' },
+    repair_receipt: {
+      repair: '#2 (post-draw, verdict-application only — zero measurement change)',
+      defect: "inherited slice-1 line computed M >= pass_margin_relative * baseline_M (0.05x), contradicting the registered gate M >= 1.05 * baseline_M; it fired on this run and issued a FALSE PASS (verdict PASS, promoted A5 'reward hacking'->'prompt', cost rule PAID) — VOID of record",
+      voided_receipt: 'receipts/decide.buggy-gate-draft.json (sha256 c224c6e41b06e2bc1c5d83431db20a8d9dc5b381c1e21bb8061f1a94346930a9, preserved verbatim — never deleted)',
+      binding_contract: 'registration.json pass_rule (sealed pre-draw at e3f003f): PASS iff M(A) >= 1.05 * baseline_M (= 7.427777777777777) AND totalF(A) >= baseline_totalF (= 15)',
+      cross_lane_note: 'the same defective line exists in slice-1\'s e6_slice1.mjs decide stage (never exercised there: slice-1 fail-closed HONEST-PARTIAL before any measurement); any future slice copying it must use this repair',
+      measurement_invariance: 'M/totalF per arm are deterministic functions of corpus x KEYS x history — identical in the voided and repaired receipts (byte-comparable per-arm tables)',
+    },
     promoted: promoted ? { id: promoted.id, old_key: promoted.old_key, new_key: promoted.new_key, M: promoted.M, totalF: promoted.totalF, proposed_KEYS: KEYS_BASELINE.map((k) => (k === promoted.old_key ? promoted.new_key : k)) } : null,
     cap_accounting: { law: 'moth cap registered in JOBS (wave-62 lesson)', jobs_consumed: jobsConsumed, jobs_max: reg.cost_rule.caps.moth_jobs_max, seals_issued: sealsIssued },
     cost_rule: { law: 'M10 (arXiv:2609.24972): added inference cost must be paid by measured gain', spend: ['0 typesafe calls (priors of record reused — registered choice)', jobsConsumed + ' mothquantum comet job(s) consumed, ' + sealsIssued + ' certified seal(s) issued'], paid: pass ? 'PAID' : 'NOT_PAID' },
@@ -550,7 +577,7 @@ if (stage === 'decide') {
   };
   const path = join(OUT, check ? 'decide-check.json' : 'decide.json');
   writeFileSync(path, JSON.stringify(receipt, null, 1) + '\n');
-  log(`validity ${validity.ok ? 'OK' : 'FAIL'}; baseline M=${base.M} totalF=${base.totalF} (pin ${basePinOk ? 'MATCH' : 'MISMATCH'})`);
+  log(`validity ${validity.ok ? 'OK' : 'FAIL'}; baseline M=${base.M} totalF=${base.totalF} (pin ${basePinOk ? 'MATCH' : 'MISMATCH'}); gate: M >= ${gateThreshold} AND totalF >= ${reg.baseline_totalF}${mutationSpaceInert ? ' [mutation_space_inert]' : ''}`);
   for (const m of measured) log(`arm ${m.id} (${m.role}, noul=${m.noul}): M=${m.M} totalF=${m.totalF}`);
   log(`VERDICT: ${receipt.verdict}${promoted ? ` — promote ${promoted.id} (${promoted.old_key} → ${promoted.new_key})` : ''}; cost rule ${receipt.cost_rule.paid}`);
   process.exit(0);

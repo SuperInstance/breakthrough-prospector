@@ -1,0 +1,47 @@
+{
+ "kind": "e6-slice-2-qrng-witness",
+ "ts_utc": "2026-10-01T23:48:21.992Z",
+ "ok": true,
+ "stage": "seal",
+ "arms_sha256": "23eec18d31cd6b8f258fb060732c6e88d7fdbac890879632787e03318ee748b4",
+ "seal_label": "e6-slice-2-arm-draw",
+ "drawn_index": 4,
+ "drawn_arm": "A5",
+ "stream": "direct",
+ "ladder": [
+  "direct",
+  "prf",
+  "prf"
+ ],
+ "attempt_no": 1,
+ "stream_note": "direct certified stream",
+ "certifiedBits": {
+  "deliveredBytes": 150,
+  "bits": 1200,
+  "hBit": 0.907002318721403,
+  "effectiveEntropyBits": 112,
+  "streamKind": "certified-direct",
+  "consumedBits": 112,
+  "requiredBits": 112
+ },
+ "raw_result_sha256": "a9e8326d8882843101392ace5789518eb907c9645a0667558791cbf2e9166ae1",
+ "job": {
+  "engine": "comet-qrng-v1",
+  "jobId": "d5a55554-311e-4607-a5b1-79aedf8e8cb9",
+  "finalStatus": "completed",
+  "polls": 4,
+  "params": {
+   "mode": "emu",
+   "num_qubits": 12,
+   "shots": 4096,
+   "output_bytes": 512,
+   "include_raw_counts": true,
+   "bell_witness": true
+  }
+ },
+ "health_precondition": {
+  "ok": true,
+  "receipt": "receipts/channel-health-probe-w63.json"
+ },
+ "note": "certified comet-qrng-v1 Fisher-Yates over the frozen arm list; the drawn arm is the BINDING LEAD of the measured bundle (anti-cherry-pick: priors never choose what gets measured; THE FIRST CERTIFIED SEAL BINDS — no re-draw). Full certified receipt: qrng-seal.json; redacted raw: qrng-seal-raw.json; attempt history: qrng-attempts.jsonl."
+}

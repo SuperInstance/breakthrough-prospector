@@ -85,3 +85,25 @@ cards stand on, so it jumps the queue per rule 3.)
   queue #2; next probe (receipted in verdict.md): fresh registration on a
   recovered channel — same frozen arms (23eec18d…), same pinned baseline, same
   metric/margins; priors battery of record stays sealed.
+- 2026-10-01 ~23:48Z–23:59Z: **E6 slice-2 executed → FAIL (mutation_space_inert),
+  cost rule NOT_PAID**, experiments/e6-slice-2/ — the registered next-probe of
+  slice-1, executed end-to-end on the RECOVERED channel: registration sealed +
+  pushed pre-draw (e3f003f; same frozen arms 23eec18d…, same pinned baseline
+  M=7.0740740740740735/totalF=15, same metric/margins; moth cap in JOBS ≤3;
+  priors REUSED from slice-1's sealed battery, 0 typesafe; channel-health
+  precondition receipted from the wave-63 keeper probe) → certified QRNG draw
+  LANDED FIRST TRY (direct stream, job d5a55554…, 1200 bits, hBit 0.907, 112/112
+  bits consumed; lead A5 binds; 1 job / 1 seal of cap 3) → B=3 bundle measured
+  (A5 7.148148148148148 / A4 7.111111111111112 / A3 7.0740740740740735, all
+  totalF=15) → **no arm meets the registered gate (M ≥ 7.427777777777777 AND
+  totalF ≥ 15)** → FAIL sealed verbatim, mutation_space_inert: true, nothing
+  promoted, 5 arms stay frozen-unmeasured. ONE defect caught and repaired with
+  measurement invariance proven: the slice-1-inherited pass-gate line computed
+  M ≥ 0.05×baseline instead of the registered 1.05× and fired a FALSE PASS
+  (voided receipt preserved verbatim, decide.buggy-gate-draft.json); the repair
+  restores exactly the registered threshold. LEDGER-EVENT AMENDMENT receipted
+  (fleet-seeds 2bc52a5 appended M12; run-6 gate now proves append-only prefix +
+  byte-exact replay). E6 recommendation to keeper: the single-keyword space is
+  exhausted (inert at 5% margin, ≤+1.05% relative observed) — reshape the edit
+  space (multi-term/deletion/insertion, t=2 → B=2) or retire the row; a fresh
+  priors battery would be default in a richer space.

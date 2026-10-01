@@ -1,0 +1,27 @@
+{
+ "kind": "e6-slice-2-health-gate",
+ "ts_utc": "2026-10-01T23:48:21.988Z",
+ "ok": true,
+ "checks": {
+  "health_passed_true": true,
+  "budget_bits_positive": true,
+  "h_bit_positive": true,
+  "bell_witness_violates_classical": true,
+  "extractor_toeplitz": true,
+  "random_hex_present": true,
+  "random_bits_positive": true
+ },
+ "receipt": "receipts/channel-health-probe-w63.json",
+ "receipt_sha256": "5d2f94fc16fb0a04fca284584993eea4aa68b5c738369fa3e3852e6e23014498",
+ "summary": {
+  "health_passed": true,
+  "budget_bits": 1264.6849661751767,
+  "h_bit": 0.9056545380881841,
+  "bell_S": 2.8193359375,
+  "classical_bound": 2,
+  "delivered_bytes": 142,
+  "delivered_bits": 1136,
+  "requested_bytes": 512
+ },
+ "note": "wave-63 keeper-lane channel-health probe, job 06884e96-1960-44f5-a7a4-3c59f24ad003 (provenance: channel-health-probe-w63.provenance.md); the probe drew no arm and selected nothing."
+}
